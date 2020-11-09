@@ -12,6 +12,13 @@ Some examples:
   ```java
   Molecule m = new Molecule("magnesium dioxide");
   m.iupac(); // gets the official IUPAC name
+  
+  Isotope.ofElement(Element.Ar); // the list of argon isotopes
+  Isotope.named("deuterium"); // gets the enum value for deuterium
+
+  Element.get(ElementCategory.ALKALI_METAL); // gets all alkali metals
+  Element.Og.isotopes(); // gets the isotopes of oganesson
+  Element.He.group(); // gets the IUPAC group number of helium
   ```
 
 Installation

@@ -4824,13 +4824,13 @@ public sealed interface Isotope extends Nuclide {
 	 * @return the corresponding isotope
 	 */
 	public static Isotope named(String name) {
-		Isotope e = parseName(name);
+		Isotope isotope = parseName(name);
 
-		if (e == null) {
+		if (isotope == null) {
 			throw new IllegalArgumentException("Found no isotope named \"" + name + "\"");
 		}
 
-		return e;
+		return isotope;
 	}
 
 	/**

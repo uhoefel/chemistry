@@ -1008,7 +1008,7 @@ public enum Element implements Nuclide {
 	private List<Isotope> isotopes;
 
 	/**
-	 * Conctructor for a new element.
+	 * Constructor for a new element.
 	 * 
 	 * @param name              the full name of the element
 	 * @param group             the IUPAC group
