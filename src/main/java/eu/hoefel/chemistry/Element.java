@@ -41,7 +41,7 @@ public enum Element implements Nuclide {
 	/**
 	 * Beryllium is rather rare in the universe, as it gets fused in stars. It was
 	 * discovered in 1798 by Louis-Nicolas Vauquelin. It was first isolated by
-	 * <a href=" https://doi.org/10.1002/andp.18280890805">Friedrich Wöhler</a> and
+	 * <a href="https://doi.org/10.1002/andp.18280890805">Friedrich Wöhler</a> and
 	 * independently by Antoine Bussy in 1828.
 	 */
 	Be("beryllium", 2, 2, 9.01218, 96, 153, 1.57, ElementCategory.ALKALINE_EARTH_METAL,
@@ -297,7 +297,7 @@ public enum Element implements Nuclide {
 			NaturalOccurence.PRIMORDIAL),
 
 	/**
-	 * ya href="https://doi.org/10.1098/rspl.1898.0051">Krypton</a> was discovered
+	 * <a href="https://doi.org/10.1098/rspl.1898.0051">Krypton</a> was discovered
 	 * in 1898 by William Ramsay and Morris William Travers. It is named after the
 	 * ancient Greek word for "hidden". It is an inert, colorless noble gas.
 	 */
