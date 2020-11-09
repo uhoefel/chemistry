@@ -2,6 +2,7 @@
 
 [![](https://img.shields.io/github/issues/uhoefel/chemistry?style=flat-square)](https://github.com/uhoefel/chemistry/issues)
 [![](https://img.shields.io/github/stars/uhoefel/chemistry?style=flat-square)](https://github.com/uhoefel/chemistry/stargazers)
+[![DOI](https://zenodo.org/badge/311457257.svg)](https://zenodo.org/badge/latestdoi/311457257)
 [![](https://img.shields.io/github/license/uhoefel/chemistry?style=flat-square)](https://choosealicense.com/licenses/mit/)
 
 Chemistry is a [Java](https://openjdk.java.net/) library designed to handle chemical types.
