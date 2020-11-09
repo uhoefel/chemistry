@@ -21,7 +21,7 @@ The artifact can be found at maven central:
 ```xml
 <dependency>
     <groupId>eu.hoefel</groupId>
-    <artifactId>units</artifactId>
+    <artifactId>chemistry</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
