@@ -147,7 +147,7 @@ final class Isotopes {
 			Rg.values(), Cn.values(), Nh.values(), Fl.values(), Mc.values(), Lv.values(), Ts.values(), Og.values() 
 		};
 
-		values = Stream.of(isotopes).flatMap(Stream::of).toArray(Isotope[]::new);
+		values = Stream.of(isotopes).flatMap(Stream::of).toArray(Isotope[]::new); // TODO maybe use collections instead?
 	}
 
 	private Isotopes() {
