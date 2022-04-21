@@ -15,7 +15,6 @@ import org.junit.jupiter.params.provider.ValueSource;
  * @author Udo Hoefel
  */
 @DisplayName("Molecules")
-@SuppressWarnings("javadoc")
 class MoleculeTests {
 
     @DisplayName("Testing molecule validity")

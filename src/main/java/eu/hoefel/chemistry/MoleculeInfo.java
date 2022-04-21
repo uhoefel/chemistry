@@ -12,7 +12,6 @@ import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 /**
  * Record that holds the information required for a molecule.
@@ -191,10 +190,11 @@ final record MoleculeInfo(String name, String formula, boolean isValid, String k
         // This method could be updated and use the mass as given by the webservice as
         // well. Not sure if it is worth the loss in speed though. It would however take
         // the binding energy into account, I guess.
-        double mass = 0;
-        for (Entry<Nuclide, Integer> component : components.entrySet()) {
-            mass += component.getKey().mass() * component.getValue();
-        }
+        double mass = components.entrySet()
+                                .stream()
+                                .mapToDouble(component -> component.getKey().mass()*component.getValue())
+                                .sum();
+
         return mass == 0 ? Double.NaN : mass;
     }
 

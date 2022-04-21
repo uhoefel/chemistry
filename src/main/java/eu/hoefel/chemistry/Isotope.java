@@ -5,8 +5,9 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * All known isotopes (excluding elements!).
- * Based on <a href="https://www.nist.gov/pml/atomic-weights-and-isotopic-compositions-relative-atomic-masses">NIST data</a>.
+ * All known isotopes (excluding elements!). Based on <a href=
+ * "https://www.nist.gov/pml/atomic-weights-and-isotopic-compositions-relative-atomic-masses">NIST
+ * data</a>.
  *
  * @see Element
  * @see Nuclide
