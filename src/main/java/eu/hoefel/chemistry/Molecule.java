@@ -2,6 +2,7 @@ package eu.hoefel.chemistry;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -20,113 +21,116 @@ import eu.hoefel.jatex.Texable;
  */
 public final record Molecule(String name) implements ChemicalCompound, Texable {
 
-	private static final ConcurrentMap<String, MoleculeInfo> info = new ConcurrentHashMap<>();
+    private static final ConcurrentMap<String, MoleculeInfo> info = new ConcurrentHashMap<>();
 
-	/**
-	 * Gets a new molecule with the specified name.
-	 * 
-	 * @param name the name, e.g. "hydroxychloroquine", "water" or "h2o"
-	 */
-	public Molecule(String name) {
-		this.name = name;
-		MoleculeInfo mi = info.computeIfAbsent(name, MoleculeInfo::forMolecule);
-		
-		if (!mi.isValid()) {
-			throw new IllegalArgumentException(
-					"You requested a nuclide (%s), not a molecule. Please use the nuclide classes!".formatted(name));
-		}
-	}
+    /**
+     * Gets a new molecule with the specified name.
+     * 
+     * @param name the name, e.g. "hydroxychloroquine", "water" or "h2o", not
+     *             {@code null}
+     * @throws NullPointerException if {@code name} is {@code null}
+     */
+    public Molecule {
+        Objects.requireNonNull(name);
 
-	/**
-	 * Gets the average mass in atomic units (see unified atomic mass unit and
-	 * Dalton). This method neglects binding energy effects and is thus just the sum
-	 * of the nuclide weights!
-	 * 
-	 * @return the average mass in u
-	 */
-	@Override
-	public double mass() {
-		return info.getOrDefault(name, MoleculeInfo.INVALID_NAME).mass();
-	}
+        MoleculeInfo mi = info.computeIfAbsent(name, MoleculeInfo::forMolecule);
+        
+        if (!mi.isValid()) {
+            throw new IllegalArgumentException(
+                    "You requested a nuclide (%s), not a molecule. Please use the nuclide classes!".formatted(name));
+        }
+    }
 
-	@Override
-	public Set<Nuclide> nuclides() {
-		return info.getOrDefault(name, MoleculeInfo.INVALID_NAME).components().keySet();
-	}
+    /**
+     * Gets the average mass in atomic units (see unified atomic mass unit and
+     * Dalton). This method neglects binding energy effects and is thus just the sum
+     * of the nuclide weights!
+     * 
+     * @return the average mass in u
+     */
+    @Override
+    public double mass() {
+        return info.getOrDefault(name, MoleculeInfo.INVALID_NAME).mass();
+    }
 
-	/**
-	 * Displays an interactive view of the molecule structure. Blocks until window
-	 * is closed.
-	 */
-	public final void structure() {
-		info.getOrDefault(name, MoleculeInfo.INVALID_NAME).structure();
-	}
+    @Override
+    public Set<Nuclide> nuclides() {
+        return info.getOrDefault(name, MoleculeInfo.INVALID_NAME).components().keySet();
+    }
 
-	/**
-	 * Gets the official IUPAC name.
-	 * 
-	 * @return the IUPAC name
-	 */
-	public final String iupac() {
-		return info.getOrDefault(name, MoleculeInfo.INVALID_NAME).iupac();
-	}
+    /**
+     * Displays an interactive view of the molecule structure. Blocks until window
+     * is closed.
+     */
+    public final void structure() {
+        info.getOrDefault(name, MoleculeInfo.INVALID_NAME).structure();
+    }
 
-	/**
-	 * Gets a number of commercially, colloquially and scientifically used names.
-	 * 
-	 * @return a list of other, synonymous, names for the given name
-	 */
-	public final List<String> names() {
-		return info.getOrDefault(name, MoleculeInfo.INVALID_NAME).names();
-	}
+    /**
+     * Gets the official IUPAC name.
+     * 
+     * @return the IUPAC name
+     */
+    public final String iupac() {
+        return info.getOrDefault(name, MoleculeInfo.INVALID_NAME).iupac();
+    }
 
-	/**
-	 * Gets the contained components, including their frequency.
-	 * 
-	 * @return the components and their frequency
-	 */
-	public final Map<Nuclide, Integer> components() {
-		return info.getOrDefault(name, MoleculeInfo.INVALID_NAME).components();
-	}
+    /**
+     * Gets a number of commercially, colloquially and scientifically used names.
+     * 
+     * @return a list of other, synonymous, names for the given name
+     */
+    public final List<String> names() {
+        return info.getOrDefault(name, MoleculeInfo.INVALID_NAME).names();
+    }
 
-	/**
-	 * Gets the chemical formula.
-	 * 
-	 * @return the chemical formula
-	 */
-	public final String formula() {
-		return info.getOrDefault(name, MoleculeInfo.INVALID_NAME).formula();
-	}
+    /**
+     * Gets the contained components, including their frequency.
+     * 
+     * @return the components and their frequency
+     */
+    public final Map<Nuclide, Integer> components() {
+        return info.getOrDefault(name, MoleculeInfo.INVALID_NAME).components();
+    }
 
-	/**
-	 * Gets the standard InChI key.
-	 * 
-	 * @return the standard InChI identifier
-	 */
-	public final String key() {
-		return info.getOrDefault(name, MoleculeInfo.INVALID_NAME).key();
-	}
+    /**
+     * Gets the chemical formula.
+     * 
+     * @return the chemical formula
+     */
+    public final String formula() {
+        return info.getOrDefault(name, MoleculeInfo.INVALID_NAME).formula();
+    }
 
-	/**
-	 * @implSpec The default implementation assumes the units can be expressed by
-	 *           the {@code chemformula} package.
-	 */
-	@Override
-	public List<LatexPackage> neededPackages() {
-		return List.of(new LatexPackage("chemformula", Map.of(), Map.of("mhchem", Set.of(Molecule.class))));
-	}
+    /**
+     * Gets the standard InChI key.
+     * 
+     * @return the standard InChI identifier
+     */
+    public final String key() {
+        return info.getOrDefault(name, MoleculeInfo.INVALID_NAME).key();
+    }
 
-	/**
-	 * @implSpec The default implementation assumes the units can be expressed by
-	 *           the {@code chemformula} package.
-	 */
-	@Override
-	public List<LatexPreambleEntry> preambleExtras() {
-		return List.of();
-	}
+    /**
+     * @implSpec The default implementation assumes the units can be expressed by
+     *           the {@code chemformula} package.
+     */
+    @Override
+    public List<LatexPackage> neededPackages() {
+        return List.of(new LatexPackage("chemformula", Map.of(), Map.of("mhchem", Set.of(Molecule.class))));
+    }
 
-	@Override
-	public List<String> latexCode() {
-		return List.of("\\ch{" + formula() + "}");
-	}
+    /**
+     * @implSpec The default implementation assumes the units can be expressed by
+     *           the {@code chemformula} package.
+     */
+    @Override
+    public List<LatexPreambleEntry> preambleExtras() {
+        return List.of();
+    }
+
+    @Override
+    public List<String> latexCode() {
+        return List.of("\\ch{" + formula() + "}");
+    }
 }

@@ -8,18 +8,18 @@ import java.util.Set;
  */
 public interface ChemicalCompound {
 
-	/**
-	 * Gets the average mass in atomic units (see unified atomic mass unit and
-	 * Dalton).
-	 * 
-	 * @return the average mass in u
-	 */
-	public double mass();
+    /**
+     * Gets the average mass in atomic units (see unified atomic mass unit and
+     * Dalton).
+     * 
+     * @return the average mass in u
+     */
+    public double mass();
 
-	/**
-	 * Gets the {@link Nuclide}s occuring in the compound.
-	 * 
-	 * @return the compounds' nuclides
-	 */
-	public Set<Nuclide> nuclides();
+    /**
+     * Gets the {@link Nuclide}s occuring in the compound.
+     * 
+     * @return the compounds' nuclides
+     */
+    public Set<Nuclide> nuclides();
 }

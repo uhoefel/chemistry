@@ -19,32 +19,32 @@ import org.junit.jupiter.params.provider.EnumSource;
 @SuppressWarnings("javadoc")
 class NuclideTests {
 
-	@DisplayName("Testing isotopes")
-	@ParameterizedTest
-	@EnumSource(Element.class)
-	void testIsotopes(Element element) {
-		List<Isotope> isotopes = Isotope.ofElement(element);
-		int numIsotopes = isotopes.size();
+    @DisplayName("Testing isotopes")
+    @ParameterizedTest
+    @EnumSource(Element.class)
+    void testIsotopes(Element element) {
+        List<Isotope> isotopes = Isotope.ofElement(element);
+        int numIsotopes = isotopes.size();
 
-		// +0.5 due to rounding
-		double maxWeightDeviation = numIsotopes + 0.5;
+        // +0.5 due to rounding
+        double maxWeightDeviation = numIsotopes + 0.5;
 
-		for (Isotope isotope : isotopes) {
-			assertEquals(element.mass(), isotope.mass(), maxWeightDeviation);
-			assertTrue(isotope.isIsotope());
-			assertEquals(1, isotope.nuclides().size());
-			assertTrue(isotope.nuclides().contains(isotope));
-		}
-	}
+        for (Isotope isotope : isotopes) {
+            assertEquals(element.mass(), isotope.mass(), maxWeightDeviation);
+            assertTrue(isotope.isIsotope());
+            assertEquals(1, isotope.nuclides().size());
+            assertTrue(isotope.nuclides().contains(isotope));
+        }
+    }
 
-	@DisplayName("Testing elements")
-	@ParameterizedTest
-	@EnumSource(Element.class)
-	void testElements(Element element) {
-		assertFalse(element.isIsotope());
-		assertEquals(1, element.nuclides().size());
-		assertTrue(element.nuclides().contains(element));
-		assertEquals(element, element.element());
-		assertEquals(element, Element.withAtomicNumber(element.atomicNumber()));
-	}
+    @DisplayName("Testing elements")
+    @ParameterizedTest
+    @EnumSource(Element.class)
+    void testElements(Element element) {
+        assertFalse(element.isIsotope());
+        assertEquals(1, element.nuclides().size());
+        assertTrue(element.nuclides().contains(element));
+        assertEquals(element, element.element());
+        assertEquals(element, Element.withAtomicNumber(element.atomicNumber()));
+    }
 }

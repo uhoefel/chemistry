@@ -9,13 +9,12 @@ import javafx.stage.Stage;
 
 /** Class for visualization of molecules. Blocks until window is closed. */
 final class MoleculeViewer extends Application {
- 
+
     @Override
     public void start(final Stage stage) {
-    	
         final WebView browser = new WebView();
         final WebEngine engine = browser.getEngine();
-        
+
         String name = getParameters().getRaw().get(0);
  
         String url = MoleculeInfo.REF_URL + name + MoleculeInfo.VISUALIZATION;
@@ -33,13 +32,13 @@ final class MoleculeViewer extends Application {
  
         stage.show();
     }
-   
-	/**
-	 * Displays an interactive view of the molecule. Blocks until window is closed.
-	 * 
-	 * @param args the name of the molecule. Only the first of the arguments is
-	 *             used.
-	 */
+
+    /**
+     * Displays an interactive view of the molecule. Blocks until window is closed.
+     * 
+     * @param args the name of the molecule. Only the first of the arguments is
+     *             used.
+     */
     public static void main(String... args) {
         launch(args);
     }

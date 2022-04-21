@@ -128,38 +128,38 @@ import eu.hoefel.chemistry.Isotope.Og;
  */
 final class Isotopes {
 
-	/** Represents all isotopes. */
-	private static final Isotope[] values;
+    /** Represents all isotopes. */
+    private static final Isotope[] values;
 
-	static {
-		Isotope[][] isotopes = {
-			 H.values(), He.values(), Li.values(), Be.values(),  B.values(),  C.values(),  N.values(),  O.values(),  F.values(), Ne.values(),
-			Na.values(), Mg.values(), Al.values(), Si.values(),  P.values(),  S.values(), Cl.values(), Ar.values(),  K.values(), Ca.values(),
-			Sc.values(), Ti.values(),  V.values(), Cr.values(), Mn.values(), Fe.values(), Co.values(), Ni.values(), Cu.values(), Zn.values(),
-			Ga.values(), Ge.values(), As.values(), Se.values(), Br.values(), Kr.values(), Rb.values(), Sr.values(),  Y.values(), Zr.values(),
-			Nb.values(), Mo.values(), Tc.values(), Ru.values(), Rh.values(), Pd.values(), Ag.values(), Cd.values(), In.values(), Sn.values(),
-			Sb.values(), Te.values(),  I.values(), Xe.values(), Cs.values(), Ba.values(), La.values(), Ce.values(), Pr.values(), Nd.values(),
-			Pm.values(), Sm.values(), Eu.values(), Gd.values(), Tb.values(), Dy.values(), Ho.values(), Er.values(), Tm.values(), Yb.values(),
-			Lu.values(), Hf.values(), Ta.values(),  W.values(), Re.values(), Os.values(), Ir.values(), Pt.values(), Au.values(), Hg.values(),
-			Tl.values(), Pb.values(), Bi.values(), Po.values(), At.values(), Rn.values(), Fr.values(), Ra.values(), Ac.values(), Th.values(),
-			Pa.values(),  U.values(), Np.values(), Pu.values(), Am.values(), Cm.values(), Bk.values(), Cf.values(), Es.values(), Fm.values(),
-			Md.values(), No.values(), Lr.values(), Rf.values(), Db.values(), Sg.values(), Bh.values(), Hs.values(), Mt.values(), Ds.values(),
-			Rg.values(), Cn.values(), Nh.values(), Fl.values(), Mc.values(), Lv.values(), Ts.values(), Og.values() 
-		};
+    static {
+        Isotope[][] isotopes = {
+             H.values(), He.values(), Li.values(), Be.values(),  B.values(),  C.values(),  N.values(),  O.values(),  F.values(), Ne.values(),
+            Na.values(), Mg.values(), Al.values(), Si.values(),  P.values(),  S.values(), Cl.values(), Ar.values(),  K.values(), Ca.values(),
+            Sc.values(), Ti.values(),  V.values(), Cr.values(), Mn.values(), Fe.values(), Co.values(), Ni.values(), Cu.values(), Zn.values(),
+            Ga.values(), Ge.values(), As.values(), Se.values(), Br.values(), Kr.values(), Rb.values(), Sr.values(),  Y.values(), Zr.values(),
+            Nb.values(), Mo.values(), Tc.values(), Ru.values(), Rh.values(), Pd.values(), Ag.values(), Cd.values(), In.values(), Sn.values(),
+            Sb.values(), Te.values(),  I.values(), Xe.values(), Cs.values(), Ba.values(), La.values(), Ce.values(), Pr.values(), Nd.values(),
+            Pm.values(), Sm.values(), Eu.values(), Gd.values(), Tb.values(), Dy.values(), Ho.values(), Er.values(), Tm.values(), Yb.values(),
+            Lu.values(), Hf.values(), Ta.values(),  W.values(), Re.values(), Os.values(), Ir.values(), Pt.values(), Au.values(), Hg.values(),
+            Tl.values(), Pb.values(), Bi.values(), Po.values(), At.values(), Rn.values(), Fr.values(), Ra.values(), Ac.values(), Th.values(),
+            Pa.values(),  U.values(), Np.values(), Pu.values(), Am.values(), Cm.values(), Bk.values(), Cf.values(), Es.values(), Fm.values(),
+            Md.values(), No.values(), Lr.values(), Rf.values(), Db.values(), Sg.values(), Bh.values(), Hs.values(), Mt.values(), Ds.values(),
+            Rg.values(), Cn.values(), Nh.values(), Fl.values(), Mc.values(), Lv.values(), Ts.values(), Og.values() 
+        };
 
-		values = Stream.of(isotopes).flatMap(Stream::of).toArray(Isotope[]::new);
-	}
+        values = Stream.of(isotopes).flatMap(Stream::of).toArray(Isotope[]::new);
+    }
 
-	private Isotopes() {
-	    throw new IllegalStateException("Utility class");
-	}
+    private Isotopes() {
+        throw new IllegalStateException("Utility class");
+    }
 
-	/**
-	 * Gets all isotopes.
-	 *
-	 * @return all isotopes
-	 */
-	public static final Isotope[] values() {
-		return values.clone();
-	}
+    /**
+     * Gets all isotopes.
+     *
+     * @return all isotopes
+     */
+    public static final Isotope[] values() {
+        return values.clone();
+    }
 }

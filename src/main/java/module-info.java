@@ -8,14 +8,10 @@
  * @author Udo Hoefel
  */
 module eu.hoefel.chemistry {
-	exports eu.hoefel.chemistry;
+    exports eu.hoefel.chemistry;
 
-	// ugh...
-	opens eu.hoefel.chemistry to org.junit.platform.commons;
-
-	requires javafx.graphics;
-	requires javafx.web;
-	requires org.junit.jupiter.api;
-	requires eu.hoefel.utils;
-	requires transitive eu.hoefel.jatex;
+    requires javafx.graphics;
+    requires javafx.web;
+    requires eu.hoefel.utils;
+    requires transitive eu.hoefel.jatex;
 }
