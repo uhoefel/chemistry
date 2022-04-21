@@ -15,6 +15,7 @@ import org.junit.jupiter.params.provider.EnumSource;
  * 
  * @author Udo Hoefel
  */
+@SuppressWarnings("javadoc")
 @DisplayName("Nuclides")
 class NuclideTests {
 

@@ -14,6 +14,7 @@ import org.junit.jupiter.params.provider.ValueSource;
  * 
  * @author Udo Hoefel
  */
+@SuppressWarnings("javadoc")
 @DisplayName("Molecules")
 class MoleculeTests {
 
@@ -43,7 +44,7 @@ class MoleculeTests {
     @DisplayName("Testing molecule masses")
     @Test
     void testMoleculeMasses() {
-        assertEquals(18.01528, new Molecule("water").mass());
+        assertEquals(18.01528, new Molecule("water").mass(), 1e-14);
         assertEquals(2.01588, new Molecule("dihydrogen").mass());
     }
 }
