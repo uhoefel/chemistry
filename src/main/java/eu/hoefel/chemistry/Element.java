@@ -861,7 +861,7 @@ public enum Element implements Nuclide {
      * element is located. Its experimental properties are only partially known, but
      * the ones known are similar to other group 5 elements, although relativistic
      * effects lead to some anomalies. Some of the experiments conducted indicate
-     * that it behaves mroe like {@link #Nb} than like {@link #Ta}.
+     * that it behaves more like {@link #Nb} than like {@link #Ta}.
      */
     Db("dubnium", 5, 7, 268, Double.NaN, Double.NaN, Double.NaN, ElementCategory.TRANSITION_METAL,
             NaturalOccurence.SYNTHETIC),
@@ -1198,6 +1198,7 @@ public enum Element implements Nuclide {
         if ("aluminum".equalsIgnoreCase(name)) return Al;
         if ("sulphur".equalsIgnoreCase(name)) return S;
         if ("cesium".equalsIgnoreCase(name)) return Cs;
+        if ("plumbum".equalsIgnoreCase(name)) return Pb;
 
         return null;
     }
