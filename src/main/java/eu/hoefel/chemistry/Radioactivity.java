@@ -196,7 +196,7 @@ public class Radioactivity {
     /**
      * @return halflife in regular units, e.g. years, months, seconds, nanoseconds etc. or "stable" if element is stable
      */
-    public String halflifeRegularUnits(){
+    public String halflifeRegular(){
         if (!isRadioactive())
             return "stable";
         return fetch(13) + fetch(16);
