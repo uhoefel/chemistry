@@ -37,4 +37,4 @@ The artifact can be found at maven central:
 
 Requirements
 ============
-Chemistry is designed to work with Java 15+. It needs preview-features enabled.
+Chemistry is designed to work with Java 17+.
