@@ -203,7 +203,7 @@ final class IsotopeUpdater {
                         }
                     }
                     sb.append(";");
-                    
+
                     sb.append("""
 
 
