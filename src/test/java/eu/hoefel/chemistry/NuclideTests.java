@@ -46,5 +46,12 @@ class NuclideTests {
         assertTrue(element.nuclides().contains(element));
         assertEquals(element, element.element());
         assertEquals(element, Element.withAtomicNumber(element.atomicNumber()));
+
+        Radioactivity radioactivity = new Radioactivity(element);
+        if (element.atomicNumber() == 43 || element.atomicNumber() == 61 || element.atomicNumber() > 82) {
+            assertTrue(radioactivity.isRadioactive());
+        } else {
+            assertFalse(radioactivity.isRadioactive());
+        }
     }
 }

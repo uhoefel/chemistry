@@ -10,6 +10,8 @@ Chemistry is a [Java](https://openjdk.java.net/) library designed to handle chem
 It has enums for all nuclides (i.e., all elements and isotopes) and provides a type for molecules (which needs an internet connection).
 The molecule types provides an implementation for the `Texable` interface from the [jatex](https://github.com/uhoefel/jatex) module, such that it can easily return proper LaTeX code.
 
+Integrates with [IAEA API](https://www-nds.iaea.org/relnsd/vcharthtml/api_v0_guide.html) to provide data about radioactivity for any element or isotope. For half-life information, access to internet is thus needed.
+
 Some examples:
   ```java
   Molecule m = new Molecule("magnesium dioxide");
@@ -21,6 +23,12 @@ Some examples:
   Element.get(ElementCategory.ALKALI_METAL); // gets all alkali metals
   Element.Og.isotopes(); // gets the isotopes of oganesson
   Element.He.group(); // gets the IUPAC group number of helium
+  Element.Ag.mass(); // gets average atomic mass of element
+        
+  Radioactivity = new Radioactivity(Element.U);
+  radioactivity.isRadioactive(); // gets if element is radioactive      
+  radioactivity.halflifeRegular(); // gets half-life in regular units (years, minutes, nanoseconds etc.)
+  radioactivity.halflifeSeconds(); // gets half-life in seconds (scientific e notation in Double type)
   ```
 
 Installation
