@@ -34,7 +34,7 @@ public final record Molecule(String name) implements ChemicalCompound, Texable {
         Objects.requireNonNull(name);
 
         MoleculeInfo mi = info.computeIfAbsent(name, MoleculeInfo::forMolecule);
-        
+
         if (!mi.isValid()) {
             throw new IllegalArgumentException(
                     "You requested a nuclide (%s), not a molecule. Please use the nuclide classes!".formatted(name));

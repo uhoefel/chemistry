@@ -30,8 +30,6 @@ final class IsotopeUpdater {
 
     private static final String LB = "\n";
 
-    private static final double ALLOWED_DEVIATION = 0.49;
-
     /**
      * Creates the enum for the isotope enum.
      * 
@@ -88,7 +86,7 @@ final class IsotopeUpdater {
                 import java.util.Set;
 
                 /**
-                 * All known isotopes (excluding elements!).
+                 * All known isotopes.
                  * Based on <a href="https://www.nist.gov/pml/atomic-weights-and-isotopic-compositions-relative-atomic-masses">NIST data</a>.
                  * 
                  * @see %s
@@ -130,9 +128,7 @@ final class IsotopeUpdater {
                             break; // no lighter specially named element
                         }
                         for (var info : innerEntry2.getValue().entrySet()) {
-                            if (Maths.approximates(elem.mass(), info.getValue(), ALLOWED_DEVIATION)) {
-                                // skip because elements are handled in the corresponding Element enum
-                            } else if (minStandardIsotopes > info.getValue()) {
+                            if (minStandardIsotopes > info.getValue()) {
                                 sb.append(LB);
                                 String javadoc = "";
                                 String name = "";
@@ -162,39 +158,34 @@ final class IsotopeUpdater {
                     }
 
                     for (Entry<Integer, Double> info : innerEntry.getValue().entrySet()) {
-                        if (Maths.approximates(elem.mass(), info.getValue(), ALLOWED_DEVIATION)) {
-                            // skip because elements are handled in the corresponding Element enum
-                        } else {
-                            sb.append(LB);
-                            sb.append(String.format(Locale.ENGLISH, "%-24s", "        /** " + Strings.capitalize(elem.fullName()) + " " + info.getKey() + " */"));
-                            sb.append(String.format(Locale.ENGLISH, "%5s", elem.name() + info.getKey()));
-                            sb.append("(");
-                            sb.append(String.format(Locale.ENGLISH, "%19.15f", info.getValue()));
-                            sb.append("),");
-                        }
+                        sb.append(LB);
+                        sb.append(String.format(Locale.ENGLISH, "%-24s", "        /** " + Strings.capitalize(elem.fullName()) + " " + info.getKey() + " */"));
+                        sb.append(String.format(Locale.ENGLISH, "%5s", elem.name() + info.getKey()));
+                        sb.append("(");
+                        sb.append(String.format(Locale.ENGLISH, "%19.15f", info.getValue()));
+                        sb.append("),");
                     }
 
                     // check if we have heavier specially named isotopes
                     for (var innerEntry2 : entry.getValue().entrySet()) {
                         if (!elem.name().equalsIgnoreCase(innerEntry2.getKey())) {
                             for (var info : innerEntry2.getValue().entrySet()) {
-                                if (Maths.approximates(elem.mass(), info.getValue(), ALLOWED_DEVIATION)) {
-                                    // skip because elements are handled in the corresponding Element enum
-                                } else if (maxStandardIsotopes < info.getValue()) {
+                                if (maxStandardIsotopes < info.getValue()) {
                                     sb.append(LB);
                                     String name = "";
                                     if ("Uup".equals(innerEntry2.getKey())) {
                                         // Uup was just the preliminary name, in the meantime a proper name was assigned, so we put it to Mc
-                                        name = Element.Mc.fullName() + info.getKey();
+                                        var firstLetter = Element.Mc.fullName().substring(0,1).toUpperCase(Locale.ENGLISH);
+                                        name = firstLetter + Element.Mc.fullName().substring(1) + " " + info.getKey();
                                     } else if ("Uus".equals(innerEntry2.getKey())) {
                                         // Uus was just the preliminary name, in the meantime a proper name was assigned, so we put it to Ts
-                                        name = Element.Ts.fullName() + info.getKey();
+                                        var firstLetter = Element.Ts.fullName().substring(0,1).toUpperCase(Locale.ENGLISH);
+                                        name = firstLetter + Element.Ts.fullName().substring(1) + " " + info.getKey();
                                     } else {
                                         name = innerEntry2.getKey() + info.getKey();
                                     }
                                     sb.append(String.format(Locale.ENGLISH, "%-24s", "        /** " + name + " */"));
                                     sb.append(String.format(Locale.ENGLISH, "%5s", elem.name() + info.getKey()));
-                                    sb.append(String.format(Locale.ENGLISH, "%4s", "_" + info.getKey()));
                                     sb.append("(");
                                     sb.append(String.format(Locale.ENGLISH, "%19.15f", info.getValue()));
                                     sb.append("),");
@@ -203,7 +194,7 @@ final class IsotopeUpdater {
                         }
                     }
                     sb.append(";");
-                    
+
                     sb.append("""
 
 
@@ -316,13 +307,13 @@ final class IsotopeUpdater {
         }
 
         StringBuilder sb = new StringBuilder();
-        
+
         sb.append("package " + IsotopeUpdater.class.getPackage().getName() + ";" + LB);
         sb.append(LB);
 
         sb.append("import java.util.stream.Stream;" + LB);
         sb.append(LB);
-        
+
         if (!Element.class.getPackage().getName().equals(IsotopeUpdater.class.getPackage().getName())) {
             sb.append("import " + Element.class.getPackage().getName() + "." + Element.class.getSimpleName() + ";" + LB);
             sb.append(LB);
@@ -379,7 +370,7 @@ final class IsotopeUpdater {
                     }
                 """.formatted(Isotope.class.getSimpleName(), elementValues.toString()));
         sb.append("}");
-        
+
         return sb.toString();
     }
 
@@ -407,7 +398,7 @@ final class IsotopeUpdater {
                 Matcher newElementNumber = NEW_ELEMENT_NUMBER.matcher(line);
                 newElementNumber.find();
                 currentElementNumber = Integer.parseInt(newElementNumber.group());
-                
+
                 Matcher newElementName = NEW_NAME.matcher(line);
                 newElementName.find();
                 currentName = newElementName.group();
