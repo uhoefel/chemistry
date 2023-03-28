@@ -5,6 +5,7 @@
 [![DOI](https://zenodo.org/badge/311457257.svg)](https://zenodo.org/badge/latestdoi/311457257)
 [![Maven Central](https://img.shields.io/maven-central/v/eu.hoefel/chemistry.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22eu.hoefel%22%20AND%20a:%22chemistry%22)
 [![](https://img.shields.io/github/license/uhoefel/chemistry?style=flat-square)](https://choosealicense.com/licenses/mit/)
+[![](https://jitpack.io/v/justADeni/chemistry.svg)](https://jitpack.io/#justADeni/chemistry/-SNAPSHOT)
 
 Chemistry is a [Java](https://openjdk.java.net/) library designed to handle chemical types.
 It has enums for all nuclides (i.e., all elements and isotopes) and provides a type for molecules (which needs an internet connection).
