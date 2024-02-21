@@ -20,7 +20,7 @@ class MoleculeTests {
 
     @DisplayName("Testing molecule validity")
     @ParameterizedTest
-    @ValueSource(strings = { "h2o", "hydroxychloroquine", "water", "magnesium dioxide" })
+    @ValueSource(strings = { "h2o", "hydroxychloroquine", "water", "chalk" })
     void testMoleculeValidity(String name) {
         assertDoesNotThrow(() -> new Molecule(name));
     }

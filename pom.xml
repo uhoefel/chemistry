@@ -5,7 +5,7 @@
 
     <groupId>eu.hoefel</groupId>
     <artifactId>chemistry</artifactId>
-    <version>1.2.1</version>
+    <version>1.3.0</version>
     <packaging>jar</packaging>
 
     <name>chemistry</name>
@@ -91,7 +91,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
+                <version>3.12.1</version>
                 <configuration>
                     <release>${jdk.version}</release>
                     <compilerArgs>${jvm.extraArgs}</compilerArgs>
@@ -100,7 +100,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>3.2.1</version>
+                <version>3.3.0</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -127,22 +127,22 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.5.0</version>
+                <version>3.6.3</version>
                 <configuration>
                     <encoding>UTF-8</encoding>
                     <tags>
                         <tag>
-                            <name>apiNote</name>
+                            <name>chemistry.apiNote</name>
                             <placement>a</placement>
                             <head>API Note:</head>
                         </tag>
                         <tag>
-                            <name>implSpec</name>
+                            <name>chemistry.implSpec</name>
                             <placement>a</placement>
                             <head>Implementation Requirements:</head>
                         </tag>
                         <tag>
-                            <name>implNote</name>
+                            <name>chemistry.implNote</name>
                             <placement>a</placement>
                             <head>Implementation Note:</head>
                         </tag>
@@ -174,7 +174,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>buildnumber-maven-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>3.2.0</version>
                 <executions>
                     <execution>
                         <phase>validate</phase>
@@ -210,7 +210,7 @@
 
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>3.2.5</version>
                 <configuration>
                     <argLine>
                        ${jvm.extraArgs}

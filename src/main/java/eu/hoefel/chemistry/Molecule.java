@@ -59,14 +59,6 @@ public final record Molecule(String name) implements ChemicalCompound, Texable {
     }
 
     /**
-     * Displays an interactive view of the molecule structure. Blocks until window
-     * is closed.
-     */
-    public final void structure() {
-        info.getOrDefault(name, MoleculeInfo.INVALID_NAME).structure();
-    }
-
-    /**
      * Gets the official IUPAC name.
      * 
      * @return the IUPAC name
@@ -112,8 +104,8 @@ public final record Molecule(String name) implements ChemicalCompound, Texable {
     }
 
     /**
-     * @implSpec The default implementation assumes the units can be expressed by
-     *           the {@code chemformula} package.
+     * @chemistry.implSpec The default implementation assumes the units can be
+     *                     expressed by the {@code chemformula} package.
      */
     @Override
     public List<LatexPackage> neededPackages() {
@@ -121,8 +113,8 @@ public final record Molecule(String name) implements ChemicalCompound, Texable {
     }
 
     /**
-     * @implSpec The default implementation assumes the units can be expressed by
-     *           the {@code chemformula} package.
+     * @chemistry.implSpec The default implementation assumes the units can be
+     *                     expressed by the {@code chemformula} package.
      */
     @Override
     public List<LatexPreambleEntry> preambleExtras() {

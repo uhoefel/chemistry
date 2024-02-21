@@ -10,8 +10,6 @@
 module eu.hoefel.chemistry {
     exports eu.hoefel.chemistry;
 
-    requires javafx.graphics;
-    requires javafx.web;
     requires eu.hoefel.utils;
     requires transitive eu.hoefel.jatex;
 }

@@ -3,10 +3,8 @@ package eu.hoefel.chemistry;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UncheckedIOException;
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
@@ -72,14 +70,6 @@ final record MoleculeInfo(String name, String formula, boolean isValid, String k
         List<String> names = getNames(key);
 
         return new MoleculeInfo(name, formula, isValid, key, components, mass, iupac, names);
-    }
-
-    /**
-     * Displays an interactive view of the molecule structure. Blocks until window
-     * is closed.
-     */
-    public void structure() {
-        MoleculeViewer.main(name);
     }
 
     /**
@@ -205,16 +195,14 @@ final record MoleculeInfo(String name, String formula, boolean isValid, String k
      * @return the text at the given URL
      */
     private static final String readUrl(String url) {
-        URL u;
+        URI u;
         try {
-            u = new URL(url);
-            URI uri = new URI(u.getProtocol(), u.getUserInfo(), u.getHost(), u.getPort(), u.getPath(), u.getQuery(), u.getRef());
-            u = new URL(uri.toASCIIString());
-        } catch (URISyntaxException | MalformedURLException e) {
+            u = new URI(url);
+        } catch (URISyntaxException e) {
             throw new IllegalArgumentException(e);
         }
 
-        try (InputStream in = u.openStream()) {
+        try (InputStream in = u.toURL().openStream()) {
             return new String(in.readAllBytes(), StandardCharsets.UTF_8);
         } catch (IOException e) {
             throw new UncheckedIOException("Cannot read from " + u, e);
