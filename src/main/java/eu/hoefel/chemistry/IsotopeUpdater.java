@@ -1,17 +1,16 @@
 package eu.hoefel.chemistry;
 
 import java.io.File;
-import java.util.EnumSet;
-import java.util.LinkedHashMap;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Locale;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
+import java.util.NavigableSet;
+import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import eu.hoefel.utils.IOs;
-import eu.hoefel.utils.Maths;
 import eu.hoefel.utils.Strings;
 
 /**
@@ -23,12 +22,22 @@ final class IsotopeUpdater {
     private static final Pattern NEW_ELEMENT_PATTERN = Pattern.compile("\\d+\\s+\\w+\\s+\\d+\\s+\\d+\\.\\d+.*");
     private static final Pattern NEW_ELEMENT_NUMBER = Pattern.compile("(\\d+)(?=\\s+\\w+\\s+\\d+\\s+\\d+\\.\\d+.*)");
     private static final Pattern NEW_NAME = Pattern.compile("(\\w+)(?=\\s+\\d+\\s+\\d+\\.\\d+.*)");
-    private static final Pattern NEW_ISOTOPE = Pattern.compile("(\\d+)(?=\\s+\\d+\\.\\d+.*)");
-    private static final Pattern NEW_ISOTOPE_MASS = Pattern.compile("(\\d+.\\d+)(?=\\(\\d+#*\\))");
+    private static final Pattern NEW_ISOTOPE_MASS_NUMBER = Pattern.compile("(\\d+)(?=\\s+\\d+\\.\\d+.*)");
+    private static final Pattern NEW_ISOTOPE_ATOMIC_MASS = Pattern.compile("(\\d+.\\d+)(?=\\(\\d+#*\\))");
     private static final Pattern NEW_NAME_PATTERN = Pattern.compile("\\w+\\s+\\d+\\s+\\d+\\.\\d+.*");
     private static final Pattern NEW_ISOTOPE_PATTERN = Pattern.compile("\\d+\\s+\\d+\\.\\d+.*");
 
     private static final String LB = "\n";
+
+    private record Isotope(Element element, String name, int massNumber, double atomicMass) implements Comparable<Isotope> {
+
+        @Override
+        public int compareTo(Isotope other) {
+            return Comparator.comparing(Isotope::element)
+                             .thenComparingInt(Isotope::massNumber)
+                             .compare(this, other);
+        }
+    }
 
     /**
      * Creates the enum for the isotope enum.
@@ -68,7 +77,7 @@ final class IsotopeUpdater {
      * @param data the data to create the interface from
      * @return the source code
      */
-    private static String constructIsotope(Map<Integer, Map<String, Map<Integer, Double>>> data) {
+    private static final String constructIsotope(NavigableSet<Isotope> data) {
         StringBuilder sb = new StringBuilder();
 
         sb.append("package " + IsotopeUpdater.class.getPackage().getName() + ";" + LB);
@@ -97,118 +106,49 @@ final class IsotopeUpdater {
                 Element.class.getSimpleName(), Nuclide.class.getSimpleName(), Nuclide.class.getSimpleName())
         );
 
-        Set<Element> elements = EnumSet.noneOf(Element.class);
-        for (var entry : data.entrySet()) {
-            Element elem = Element.withAtomicNumber(entry.getKey());
-            elements.add(elem);
+        List<Element> elements = data.stream().map(Isotope::element).distinct().sorted().toList();
 
-            for (var innerEntry : entry.getValue().entrySet()) {
-                if (elem.name().equalsIgnoreCase(innerEntry.getKey())) {
+        for (var element : elements) {
+            sb.append(LB);
+            sb.append("    /** " + Strings.capitalize(element.fullName()) + " (cf. {@link "
+                    + Element.class.getSimpleName() + "#" + element.name() + "}) isotopes. */" + LB);
+            sb.append("    public enum " + element.name() + " implements Isotope {" + LB);
 
-                    sb.append(LB);
-                    sb.append("    /** " + Strings.capitalize(elem.fullName()) + " (cf. {@link "
-                            + Element.class.getSimpleName() + "#" + elem.name() + "}) isotopes. */" + LB);
-                    sb.append("    public enum " + elem.name() + " implements Isotope {" + LB);
+            var isotopes = data.stream().filter(iso -> iso.element().equals(element)).sorted().toList();
 
-                    double minStandardIsotopes = Double.MAX_VALUE;
-                    double maxStandardIsotopes = Double.MIN_VALUE;
+            var isos = new ArrayList<String>();
+            for (var iso : isotopes) {
+                String javadoc = switch (iso.name()) {
+                    case "D" -> "Deuterium";
+                    case "T" -> "Tritium";
+                    default  -> Strings.capitalize(element.fullName())+" "+iso.massNumber();
+                };
 
-                    for (var innerEntry2 : entry.getValue().entrySet()) {
-                        if (elem.name().equalsIgnoreCase(innerEntry2.getKey())) {
-                            for (var info : innerEntry2.getValue().entrySet()) {
-                                minStandardIsotopes = Math.min(minStandardIsotopes, info.getKey());
-                                maxStandardIsotopes = Math.max(maxStandardIsotopes, info.getKey());
-                            }
-                        }
-                    }
+                String enumName = switch (iso.name()) {
+                    case "D" -> "D";
+                    case "T" -> "T";
+                    default  -> Strings.capitalize(element.name())+iso.massNumber();
+                };
 
-                    // check if we have lighter specially named isotopes
-                    for (var innerEntry2 : entry.getValue().entrySet()) {
-                        if (elem.name().equalsIgnoreCase(innerEntry2.getKey())) {
-                            break; // no lighter specially named element
-                        }
-                        for (var info : innerEntry2.getValue().entrySet()) {
-                            if (minStandardIsotopes > info.getValue()) {
-                                sb.append(LB);
-                                String javadoc = "";
-                                String name = "";
-                                if ("D".equals(innerEntry2.getKey())) {
-                                    javadoc = "Deuterium";
-                                    name = "D";
-                                } else if ("T".equals(innerEntry2.getKey())) {
-                                    javadoc = "Tritium";
-                                    name = "T";
-                                } else {
-                                    javadoc = innerEntry2.getKey() + info.getKey();
-                                    name = info.getKey().toString();
-                                }
-                                sb.append(String.format(Locale.ENGLISH, "%-24s", "        /** " + javadoc + " */"));
-
-                                if (Maths.isInteger(name)) {
-                                    sb.append(String.format(Locale.ENGLISH, "%5s", elem.name() + name));
-                                } else {
-                                    sb.append(String.format(Locale.ENGLISH, "%5s", name));
-                                }
-
-                                sb.append("(");
-                                sb.append(String.format(Locale.ENGLISH, "%19.15f", info.getValue()));
-                                sb.append("),");
-                            }
-                        }
-                    }
-
-                    for (Entry<Integer, Double> info : innerEntry.getValue().entrySet()) {
-                        sb.append(LB);
-                        sb.append(String.format(Locale.ENGLISH, "%-24s", "        /** " + Strings.capitalize(elem.fullName()) + " " + info.getKey() + " */"));
-                        sb.append(String.format(Locale.ENGLISH, "%5s", elem.name() + info.getKey()));
-                        sb.append("(");
-                        sb.append(String.format(Locale.ENGLISH, "%19.15f", info.getValue()));
-                        sb.append("),");
-                    }
-
-                    // check if we have heavier specially named isotopes
-                    for (var innerEntry2 : entry.getValue().entrySet()) {
-                        if (!elem.name().equalsIgnoreCase(innerEntry2.getKey())) {
-                            for (var info : innerEntry2.getValue().entrySet()) {
-                                if (maxStandardIsotopes < info.getValue()) {
-                                    sb.append(LB);
-                                    String name = "";
-                                    if ("Uup".equals(innerEntry2.getKey())) {
-                                        // Uup was just the preliminary name, in the meantime a proper name was assigned, so we put it to Mc
-                                        var firstLetter = Element.Mc.fullName().substring(0,1).toUpperCase(Locale.ENGLISH);
-                                        name = firstLetter + Element.Mc.fullName().substring(1) + " " + info.getKey();
-                                    } else if ("Uus".equals(innerEntry2.getKey())) {
-                                        // Uus was just the preliminary name, in the meantime a proper name was assigned, so we put it to Ts
-                                        var firstLetter = Element.Ts.fullName().substring(0,1).toUpperCase(Locale.ENGLISH);
-                                        name = firstLetter + Element.Ts.fullName().substring(1) + " " + info.getKey();
-                                    } else {
-                                        name = innerEntry2.getKey() + info.getKey();
-                                    }
-                                    sb.append(String.format(Locale.ENGLISH, "%-24s", "        /** " + name + " */"));
-                                    sb.append(String.format(Locale.ENGLISH, "%5s", elem.name() + info.getKey()));
-                                    sb.append("(");
-                                    sb.append(String.format(Locale.ENGLISH, "%19.15f", info.getValue()));
-                                    sb.append("),");
-                                }
-                            }
-                        }
-                    }
-                    sb.append(";");
-
-                    sb.append("""
-
-
-                            private double atomicMass;
-
-                            %s(double avgAtomicMass) { atomicMass = avgAtomicMass; }
-
-                            @Override public double mass() { return atomicMass; }
-                            @Override public %s element() { return %s.%s; }
-                            @Override public Set<Nuclide> nuclides() { return Set.of(this); }
-                        }
-                    """.formatted(elem.name(), Element.class.getSimpleName(), Element.class.getSimpleName(), elem.name()));
-                }
+                isos.add("""
+                         %-24s%5s(%19.15f)\
+                         """.formatted("        /** " + javadoc + " */", enumName, iso.atomicMass()));
             }
+
+            sb.append(String.join(","+LB, isos));
+            sb.append(";");
+            sb.append("""
+
+
+                    private double atomicMass;
+
+                    %s(double avgAtomicMass) { atomicMass = avgAtomicMass; }
+
+                    @Override public double mass() { return atomicMass; }
+                    @Override public %s element() { return %s.%s; }
+                    @Override public Set<Nuclide> nuclides() { return Set.of(this); }
+                }
+            """.formatted(element.name(), Element.class.getSimpleName(), Element.class.getSimpleName(), element.name()));
         }
 
         sb.append(LB);
@@ -289,7 +229,7 @@ final class IsotopeUpdater {
             }
             """,
         Element.class.getSimpleName()));
-        
+
         return sb.toString();
     }
 
@@ -299,12 +239,8 @@ final class IsotopeUpdater {
      * @param data the data to create the class from
      * @return the source code
      */
-    private static final String constructIsotopeUtils(Map<Integer, Map<String, Map<Integer, Double>>> data) {
-        Set<Element> elements = EnumSet.noneOf(Element.class);
-        for (var entry : data.entrySet()) {
-            Element elem = Element.withAtomicNumber(entry.getKey());
-            elements.add(elem);
-        }
+    private static final String constructIsotopeUtils(NavigableSet<Isotope> data) {
+        List<Element> elements = data.stream().map(Isotope::element).distinct().sorted().toList();
 
         StringBuilder sb = new StringBuilder();
 
@@ -380,8 +316,8 @@ final class IsotopeUpdater {
      * @param lines the lines to parse
      * @return the parsed data
      */
-    private static Map<Integer, Map<String, Map<Integer, Double>>> parseData(String[] lines) {
-        Map<Integer,Map<String,Map<Integer,Double>>> data = new LinkedHashMap<>();
+    private static NavigableSet<Isotope> parseData(String[] lines) {
+        var data = new TreeSet<Isotope>();
 
         int currentElementNumber = 0;
         String currentName = "";
@@ -401,68 +337,58 @@ final class IsotopeUpdater {
 
                 Matcher newElementName = NEW_NAME.matcher(line);
                 newElementName.find();
-                currentName = newElementName.group();
+                currentName = sanitizeNames(newElementName.group());
 
-                Matcher newElementIsotope = NEW_ISOTOPE.matcher(line);
-                newElementIsotope.find();
+                Matcher newElementIsotopeMassNumber = NEW_ISOTOPE_MASS_NUMBER.matcher(line);
+                newElementIsotopeMassNumber.find();
+                var massNumber = Integer.parseInt(newElementIsotopeMassNumber.group());
 
-                Matcher newElementIsotopeAtomicMass = NEW_ISOTOPE_MASS.matcher(line);
+                Matcher newElementIsotopeAtomicMass = NEW_ISOTOPE_ATOMIC_MASS.matcher(line);
                 newElementIsotopeAtomicMass.find(); // here we need only the first one!
+                var atomicMass = Double.parseDouble(newElementIsotopeAtomicMass.group());
 
-                Map<Integer, Double> isotopeMass = new LinkedHashMap<>();
-                isotopeMass.put(Integer.parseInt(newElementIsotope.group()), Double.parseDouble(newElementIsotopeAtomicMass.group()));
-
-                Map<String, Map<Integer, Double>> nameInfo = new LinkedHashMap<>();
-                nameInfo.put(currentName, isotopeMass);
-
-                data.put(currentElementNumber, nameInfo);
-
+                var elem = Element.withAtomicNumber(currentElementNumber);
+                var iso = new Isotope(elem, currentName, massNumber, atomicMass);
+                data.add(iso);
             } else if (newName.matches()) {
-                var nameInfo = data.get(currentElementNumber);
-
                 Matcher newElementName = NEW_NAME.matcher(line);
                 newElementName.find();
-                currentName = newElementName.group();
+                currentName = sanitizeNames(newElementName.group());
 
-                Matcher newElementIsotope = NEW_ISOTOPE.matcher(line);
-                newElementIsotope.find();
+                Matcher newElementIsotopeMassNumber = NEW_ISOTOPE_MASS_NUMBER.matcher(line);
+                newElementIsotopeMassNumber.find();
+                var massNumber = Integer.parseInt(newElementIsotopeMassNumber.group());
 
-                Matcher newElementIsotopeAtomicMass = NEW_ISOTOPE_MASS.matcher(line);
+                Matcher newElementIsotopeAtomicMass = NEW_ISOTOPE_ATOMIC_MASS.matcher(line);
                 newElementIsotopeAtomicMass.find(); // here we need only the first one!
+                var atomicMass = Double.parseDouble(newElementIsotopeAtomicMass.group());
 
-                Map<Integer,Double> isotopeMass = new LinkedHashMap<>();
-                isotopeMass.put(Integer.parseInt(newElementIsotope.group()), Double.parseDouble(newElementIsotopeAtomicMass.group()));
-
-                // fix order for D and T
-                if ("D".equals(currentName)) {
-                    var copy = new LinkedHashMap<>(nameInfo);
-                    nameInfo.clear();
-                    nameInfo.put(currentName, isotopeMass);
-                    nameInfo.putAll(copy);
-                } else if ("T".equals(currentName)) {
-                    var copy = new LinkedHashMap<>(nameInfo);
-                    nameInfo.clear();
-                    nameInfo.put("D", copy.get("D"));
-                    nameInfo.put(currentName, isotopeMass);
-                    nameInfo.put("H", copy.get("H"));
-                } else {
-                    nameInfo.put(currentName, isotopeMass);
-                }
-
+                var elem = Element.withAtomicNumber(currentElementNumber);
+                var iso = new Isotope(elem, currentName, massNumber, atomicMass);
+                data.add(iso);
             } else if (newIsotope.matches()) {
-                var nameInfo = data.get(currentElementNumber);
-                Map<Integer,Double> isotopeMass = nameInfo.get(currentName);
+                Matcher newElementIsotopeMassNumber = NEW_ISOTOPE_MASS_NUMBER.matcher(line);
+                newElementIsotopeMassNumber.find();
+                var massNumber = Integer.parseInt(newElementIsotopeMassNumber.group());
 
-                Matcher newElementIsotope = NEW_ISOTOPE.matcher(line);
-                newElementIsotope.find();
-
-                Matcher newElementIsotopeAtomicMass = NEW_ISOTOPE_MASS.matcher(line);
+                Matcher newElementIsotopeAtomicMass = NEW_ISOTOPE_ATOMIC_MASS.matcher(line);
                 newElementIsotopeAtomicMass.find(); // here we need only the first one!
+                var atomicMass = Double.parseDouble(newElementIsotopeAtomicMass.group());
 
-                isotopeMass.put(Integer.parseInt(newElementIsotope.group()), Double.parseDouble(newElementIsotopeAtomicMass.group()));
+                var elem = Element.withAtomicNumber(currentElementNumber);
+                var iso = new Isotope(elem, currentName, massNumber, atomicMass);
+                data.add(iso);
             }
         }
 
         return data;
+    }
+
+    private static final String sanitizeNames(String name) {
+        return switch (name) {
+            case "Uup" -> Element.Mc.name();
+            case "Uus" -> Element.Ts.name();
+            default    -> name;
+        };
     }
 }

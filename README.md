@@ -31,12 +31,12 @@ The artifact can be found at maven central:
 <dependency>
     <groupId>eu.hoefel</groupId>
     <artifactId>chemistry</artifactId>
-    <version>1.3.1</version>
+    <version>2.0.0</version>
 </dependency>
 ```
 
 Requirements
 ============
-Chemistry is designed to work with Java 17+.
+Chemistry is designed to work with Java 21+.
 
 Note that version 1.3.0 removed the dependency on javafx, as it seemed an unnecessarily big dependency for what it achieved.

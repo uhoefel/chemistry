@@ -15,13 +15,13 @@ public sealed interface Isotope extends Nuclide {
 
     /** Hydrogen (cf. {@link Element#H}) isotopes. */
     public enum H implements Isotope {
-
+        /** Hydrogen 1 */   H1(  1.007825032230000),
         /** Deuterium */    D(  2.014101778120000),
         /** Tritium */      T(  3.016049277900000),
         /** Hydrogen 4 */   H4(  4.026430000000000),
         /** Hydrogen 5 */   H5(  5.035311000000000),
         /** Hydrogen 6 */   H6(  6.044960000000000),
-        /** Hydrogen 7 */   H7(  7.052700000000000),;
+        /** Hydrogen 7 */   H7(  7.052700000000000);
 
         private double atomicMass;
 
@@ -34,7 +34,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Helium (cf. {@link Element#He}) isotopes. */
     public enum He implements Isotope {
-
         /** Helium 3 */   He3(  3.016029320100000),
         /** Helium 4 */   He4(  4.002603254130000),
         /** Helium 5 */   He5(  5.012057000000000),
@@ -42,7 +41,7 @@ public sealed interface Isotope extends Nuclide {
         /** Helium 7 */   He7(  7.027990700000000),
         /** Helium 8 */   He8(  8.033934390000000),
         /** Helium 9 */   He9(  9.043946000000000),
-        /** Helium 10 */ He10( 10.052790000000000),;
+        /** Helium 10 */ He10( 10.052790000000000);
 
         private double atomicMass;
 
@@ -55,7 +54,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Lithium (cf. {@link Element#Li}) isotopes. */
     public enum Li implements Isotope {
-
         /** Lithium 3 */  Li3(  3.030800000000000),
         /** Lithium 4 */  Li4(  4.027190000000000),
         /** Lithium 5 */  Li5(  5.012538000000000),
@@ -66,7 +64,7 @@ public sealed interface Isotope extends Nuclide {
         /** Lithium 10 */ Li10( 10.035483000000000),
         /** Lithium 11 */ Li11( 11.043723580000000),
         /** Lithium 12 */ Li12( 12.052517000000000),
-        /** Lithium 13 */ Li13( 13.062630000000000),;
+        /** Lithium 13 */ Li13( 13.062630000000000);
 
         private double atomicMass;
 
@@ -79,7 +77,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Beryllium (cf. {@link Element#Be}) isotopes. */
     public enum Be implements Isotope {
-
         /** Beryllium 5 */  Be5(  5.039900000000000),
         /** Beryllium 6 */  Be6(  6.019726400000000),
         /** Beryllium 7 */  Be7(  7.016928717000000),
@@ -91,7 +88,7 @@ public sealed interface Isotope extends Nuclide {
         /** Beryllium 13 */ Be13( 13.036135000000000),
         /** Beryllium 14 */ Be14( 14.042890000000000),
         /** Beryllium 15 */ Be15( 15.053420000000000),
-        /** Beryllium 16 */ Be16( 16.061670000000000),;
+        /** Beryllium 16 */ Be16( 16.061670000000000);
 
         private double atomicMass;
 
@@ -104,7 +101,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Boron (cf. {@link Element#B}) isotopes. */
     public enum B implements Isotope {
-
         /** Boron 6 */     B6(  6.050800000000000),
         /** Boron 7 */     B7(  7.029712000000000),
         /** Boron 8 */     B8(  8.024607300000000),
@@ -120,7 +116,7 @@ public sealed interface Isotope extends Nuclide {
         /** Boron 18 */   B18( 18.055660000000000),
         /** Boron 19 */   B19( 19.063100000000000),
         /** Boron 20 */   B20( 20.072070000000000),
-        /** Boron 21 */   B21( 21.081290000000000),;
+        /** Boron 21 */   B21( 21.081290000000000);
 
         private double atomicMass;
 
@@ -133,7 +129,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Carbon (cf. {@link Element#C}) isotopes. */
     public enum C implements Isotope {
-
         /** Carbon 8 */    C8(  8.037643000000000),
         /** Carbon 9 */    C9(  9.031037200000000),
         /** Carbon 10 */  C10( 10.016853310000000),
@@ -149,7 +144,7 @@ public sealed interface Isotope extends Nuclide {
         /** Carbon 20 */  C20( 20.040320000000000),
         /** Carbon 21 */  C21( 21.049000000000000),
         /** Carbon 22 */  C22( 22.057530000000000),
-        /** Carbon 23 */  C23( 23.068900000000000),;
+        /** Carbon 23 */  C23( 23.068900000000000);
 
         private double atomicMass;
 
@@ -162,7 +157,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Nitrogen (cf. {@link Element#N}) isotopes. */
     public enum N implements Isotope {
-
         /** Nitrogen 10 */  N10( 10.041650000000000),
         /** Nitrogen 11 */  N11( 11.026091000000000),
         /** Nitrogen 12 */  N12( 12.018613200000000),
@@ -178,7 +172,7 @@ public sealed interface Isotope extends Nuclide {
         /** Nitrogen 22 */  N22( 22.034390000000000),
         /** Nitrogen 23 */  N23( 23.041140000000000),
         /** Nitrogen 24 */  N24( 24.050390000000000),
-        /** Nitrogen 25 */  N25( 25.060100000000000),;
+        /** Nitrogen 25 */  N25( 25.060100000000000);
 
         private double atomicMass;
 
@@ -191,7 +185,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Oxygen (cf. {@link Element#O}) isotopes. */
     public enum O implements Isotope {
-
         /** Oxygen 12 */  O12( 12.034262000000000),
         /** Oxygen 13 */  O13( 13.024815000000000),
         /** Oxygen 14 */  O14( 14.008596360000000),
@@ -208,7 +201,7 @@ public sealed interface Isotope extends Nuclide {
         /** Oxygen 25 */  O25( 25.029360000000000),
         /** Oxygen 26 */  O26( 26.037290000000000),
         /** Oxygen 27 */  O27( 27.047720000000000),
-        /** Oxygen 28 */  O28( 28.055910000000000),;
+        /** Oxygen 28 */  O28( 28.055910000000000);
 
         private double atomicMass;
 
@@ -221,7 +214,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Fluorine (cf. {@link Element#F}) isotopes. */
     public enum F implements Isotope {
-
         /** Fluorine 14 */  F14( 14.034315000000000),
         /** Fluorine 15 */  F15( 15.018043000000000),
         /** Fluorine 16 */  F16( 16.011465700000000),
@@ -239,7 +231,7 @@ public sealed interface Isotope extends Nuclide {
         /** Fluorine 28 */  F28( 28.035340000000000),
         /** Fluorine 29 */  F29( 29.042540000000000),
         /** Fluorine 30 */  F30( 30.051650000000000),
-        /** Fluorine 31 */  F31( 31.059710000000000),;
+        /** Fluorine 31 */  F31( 31.059710000000000);
 
         private double atomicMass;
 
@@ -252,7 +244,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Neon (cf. {@link Element#Ne}) isotopes. */
     public enum Ne implements Isotope {
-
         /** Neon 16 */   Ne16( 16.025750000000000),
         /** Neon 17 */   Ne17( 17.017713960000000),
         /** Neon 18 */   Ne18( 18.005708700000000),
@@ -271,7 +262,7 @@ public sealed interface Isotope extends Nuclide {
         /** Neon 31 */   Ne31( 31.033100000000000),
         /** Neon 32 */   Ne32( 32.039720000000000),
         /** Neon 33 */   Ne33( 33.049380000000000),
-        /** Neon 34 */   Ne34( 34.056730000000000),;
+        /** Neon 34 */   Ne34( 34.056730000000000);
 
         private double atomicMass;
 
@@ -284,7 +275,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Sodium (cf. {@link Element#Na}) isotopes. */
     public enum Na implements Isotope {
-
         /** Sodium 18 */ Na18( 18.026880000000000),
         /** Sodium 19 */ Na19( 19.013880000000000),
         /** Sodium 20 */ Na20( 20.007354400000000),
@@ -304,7 +294,7 @@ public sealed interface Isotope extends Nuclide {
         /** Sodium 34 */ Na34( 34.033590000000000),
         /** Sodium 35 */ Na35( 35.040620000000000),
         /** Sodium 36 */ Na36( 36.049290000000000),
-        /** Sodium 37 */ Na37( 37.057050000000000),;
+        /** Sodium 37 */ Na37( 37.057050000000000);
 
         private double atomicMass;
 
@@ -317,7 +307,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Magnesium (cf. {@link Element#Mg}) isotopes. */
     public enum Mg implements Isotope {
-
         /** Magnesium 19 */ Mg19( 19.034169000000000),
         /** Magnesium 20 */ Mg20( 20.018850000000000),
         /** Magnesium 21 */ Mg21( 21.011716000000000),
@@ -339,7 +328,7 @@ public sealed interface Isotope extends Nuclide {
         /** Magnesium 37 */ Mg37( 37.030370000000000),
         /** Magnesium 38 */ Mg38( 38.036580000000000),
         /** Magnesium 39 */ Mg39( 39.045380000000000),
-        /** Magnesium 40 */ Mg40( 40.052180000000000),;
+        /** Magnesium 40 */ Mg40( 40.052180000000000);
 
         private double atomicMass;
 
@@ -352,7 +341,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Aluminium (cf. {@link Element#Al}) isotopes. */
     public enum Al implements Isotope {
-
         /** Aluminium 21 */ Al21( 21.028970000000000),
         /** Aluminium 22 */ Al22( 22.019540000000000),
         /** Aluminium 23 */ Al23( 23.007244350000000),
@@ -375,7 +363,7 @@ public sealed interface Isotope extends Nuclide {
         /** Aluminium 40 */ Al40( 40.030030000000000),
         /** Aluminium 41 */ Al41( 41.036380000000000),
         /** Aluminium 42 */ Al42( 42.043840000000000),
-        /** Aluminium 43 */ Al43( 43.051470000000000),;
+        /** Aluminium 43 */ Al43( 43.051470000000000);
 
         private double atomicMass;
 
@@ -388,7 +376,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Silicon (cf. {@link Element#Si}) isotopes. */
     public enum Si implements Isotope {
-
         /** Silicon 22 */ Si22( 22.035790000000000),
         /** Silicon 23 */ Si23( 23.025440000000000),
         /** Silicon 24 */ Si24( 24.011535000000000),
@@ -412,7 +399,7 @@ public sealed interface Isotope extends Nuclide {
         /** Silicon 42 */ Si42( 42.017780000000000),
         /** Silicon 43 */ Si43( 43.024800000000000),
         /** Silicon 44 */ Si44( 44.030610000000000),
-        /** Silicon 45 */ Si45( 45.039950000000000),;
+        /** Silicon 45 */ Si45( 45.039950000000000);
 
         private double atomicMass;
 
@@ -425,7 +412,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Phosphorus (cf. {@link Element#P}) isotopes. */
     public enum P implements Isotope {
-
         /** Phosphorus 24 */  P24( 24.035770000000000),
         /** Phosphorus 25 */  P25( 25.021190000000000),
         /** Phosphorus 26 */  P26( 26.011780000000000),
@@ -449,7 +435,7 @@ public sealed interface Isotope extends Nuclide {
         /** Phosphorus 44 */  P44( 44.011210000000000),
         /** Phosphorus 45 */  P45( 45.016450000000000),
         /** Phosphorus 46 */  P46( 46.024460000000000),
-        /** Phosphorus 47 */  P47( 47.031390000000000),;
+        /** Phosphorus 47 */  P47( 47.031390000000000);
 
         private double atomicMass;
 
@@ -462,7 +448,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Sulfur (cf. {@link Element#S}) isotopes. */
     public enum S implements Isotope {
-
         /** Sulfur 26 */  S26( 26.029070000000000),
         /** Sulfur 27 */  S27( 27.018280000000000),
         /** Sulfur 28 */  S28( 28.004370000000000),
@@ -486,7 +471,7 @@ public sealed interface Isotope extends Nuclide {
         /** Sulfur 46 */  S46( 46.000040000000000),
         /** Sulfur 47 */  S47( 47.007950000000000),
         /** Sulfur 48 */  S48( 48.013700000000000),
-        /** Sulfur 49 */  S49( 49.022760000000000),;
+        /** Sulfur 49 */  S49( 49.022760000000000);
 
         private double atomicMass;
 
@@ -499,7 +484,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Chlorine (cf. {@link Element#Cl}) isotopes. */
     public enum Cl implements Isotope {
-
         /** Chlorine 28 */ Cl28( 28.029540000000000),
         /** Chlorine 29 */ Cl29( 29.014780000000000),
         /** Chlorine 30 */ Cl30( 30.004770000000000),
@@ -523,7 +507,7 @@ public sealed interface Isotope extends Nuclide {
         /** Chlorine 48 */ Cl48( 47.995640000000000),
         /** Chlorine 49 */ Cl49( 49.001230000000000),
         /** Chlorine 50 */ Cl50( 50.009050000000000),
-        /** Chlorine 51 */ Cl51( 51.015540000000000),;
+        /** Chlorine 51 */ Cl51( 51.015540000000000);
 
         private double atomicMass;
 
@@ -536,7 +520,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Argon (cf. {@link Element#Ar}) isotopes. */
     public enum Ar implements Isotope {
-
         /** Argon 30 */  Ar30( 30.023070000000000),
         /** Argon 31 */  Ar31( 31.012120000000000),
         /** Argon 32 */  Ar32( 31.997637800000000),
@@ -560,7 +543,7 @@ public sealed interface Isotope extends Nuclide {
         /** Argon 50 */  Ar50( 49.986130000000000),
         /** Argon 51 */  Ar51( 50.993700000000000),
         /** Argon 52 */  Ar52( 51.998960000000000),
-        /** Argon 53 */  Ar53( 53.007290000000000),;
+        /** Argon 53 */  Ar53( 53.007290000000000);
 
         private double atomicMass;
 
@@ -573,7 +556,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Potassium (cf. {@link Element#K}) isotopes. */
     public enum K implements Isotope {
-
         /** Potassium 32 */  K32( 32.022650000000000),
         /** Potassium 33 */  K33( 33.007560000000000),
         /** Potassium 34 */  K34( 33.998690000000000),
@@ -598,7 +580,7 @@ public sealed interface Isotope extends Nuclide {
         /** Potassium 53 */  K53( 52.987460000000000),
         /** Potassium 54 */  K54( 53.994630000000000),
         /** Potassium 55 */  K55( 55.000760000000000),
-        /** Potassium 56 */  K56( 56.008510000000000),;
+        /** Potassium 56 */  K56( 56.008510000000000);
 
         private double atomicMass;
 
@@ -611,7 +593,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Calcium (cf. {@link Element#Ca}) isotopes. */
     public enum Ca implements Isotope {
-
         /** Calcium 34 */ Ca34( 34.014870000000000),
         /** Calcium 35 */ Ca35( 35.005140000000000),
         /** Calcium 36 */ Ca36( 35.993074000000000),
@@ -636,7 +617,7 @@ public sealed interface Isotope extends Nuclide {
         /** Calcium 55 */ Ca55( 54.980300000000000),
         /** Calcium 56 */ Ca56( 55.985080000000000),
         /** Calcium 57 */ Ca57( 56.992620000000000),
-        /** Calcium 58 */ Ca58( 57.997940000000000),;
+        /** Calcium 58 */ Ca58( 57.997940000000000);
 
         private double atomicMass;
 
@@ -649,7 +630,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Scandium (cf. {@link Element#Sc}) isotopes. */
     public enum Sc implements Isotope {
-
         /** Scandium 36 */ Sc36( 36.016480000000000),
         /** Scandium 37 */ Sc37( 37.003740000000000),
         /** Scandium 38 */ Sc38( 37.995120000000000),
@@ -675,7 +655,7 @@ public sealed interface Isotope extends Nuclide {
         /** Scandium 58 */ Sc58( 57.984030000000000),
         /** Scandium 59 */ Sc59( 58.988940000000000),
         /** Scandium 60 */ Sc60( 59.995650000000000),
-        /** Scandium 61 */ Sc61( 61.001000000000000),;
+        /** Scandium 61 */ Sc61( 61.001000000000000);
 
         private double atomicMass;
 
@@ -688,7 +668,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Titanium (cf. {@link Element#Ti}) isotopes. */
     public enum Ti implements Isotope {
-
         /** Titanium 38 */ Ti38( 38.011450000000000),
         /** Titanium 39 */ Ti39( 39.002360000000000),
         /** Titanium 40 */ Ti40( 39.990500000000000),
@@ -714,7 +693,7 @@ public sealed interface Isotope extends Nuclide {
         /** Titanium 60 */ Ti60( 59.976030000000000),
         /** Titanium 61 */ Ti61( 60.982450000000000),
         /** Titanium 62 */ Ti62( 61.986510000000000),
-        /** Titanium 63 */ Ti63( 62.993750000000000),;
+        /** Titanium 63 */ Ti63( 62.993750000000000);
 
         private double atomicMass;
 
@@ -727,7 +706,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Vanadium (cf. {@link Element#V}) isotopes. */
     public enum V implements Isotope {
-
         /** Vanadium 40 */  V40( 40.012760000000000),
         /** Vanadium 41 */  V41( 41.000210000000000),
         /** Vanadium 42 */  V42( 41.991820000000000),
@@ -754,7 +732,7 @@ public sealed interface Isotope extends Nuclide {
         /** Vanadium 63 */  V63( 62.976390000000000),
         /** Vanadium 64 */  V64( 63.982640000000000),
         /** Vanadium 65 */  V65( 64.987500000000000),
-        /** Vanadium 66 */  V66( 65.993980000000000),;
+        /** Vanadium 66 */  V66( 65.993980000000000);
 
         private double atomicMass;
 
@@ -767,7 +745,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Chromium (cf. {@link Element#Cr}) isotopes. */
     public enum Cr implements Isotope {
-
         /** Chromium 42 */ Cr42( 42.006700000000000),
         /** Chromium 43 */ Cr43( 42.997530000000000),
         /** Chromium 44 */ Cr44( 43.985360000000000),
@@ -794,7 +771,7 @@ public sealed interface Isotope extends Nuclide {
         /** Chromium 65 */ Cr65( 64.969960000000000),
         /** Chromium 66 */ Cr66( 65.973660000000000),
         /** Chromium 67 */ Cr67( 66.980160000000000),
-        /** Chromium 68 */ Cr68( 67.984030000000000),;
+        /** Chromium 68 */ Cr68( 67.984030000000000);
 
         private double atomicMass;
 
@@ -807,7 +784,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Manganese (cf. {@link Element#Mn}) isotopes. */
     public enum Mn implements Isotope {
-
         /** Manganese 44 */ Mn44( 44.007150000000000),
         /** Manganese 45 */ Mn45( 44.994490000000000),
         /** Manganese 46 */ Mn46( 45.986090000000000),
@@ -835,7 +811,7 @@ public sealed interface Isotope extends Nuclide {
         /** Manganese 68 */ Mn68( 67.969620000000000),
         /** Manganese 69 */ Mn69( 68.973660000000000),
         /** Manganese 70 */ Mn70( 69.979370000000000),
-        /** Manganese 71 */ Mn71( 70.983680000000000),;
+        /** Manganese 71 */ Mn71( 70.983680000000000);
 
         private double atomicMass;
 
@@ -848,7 +824,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Iron (cf. {@link Element#Fe}) isotopes. */
     public enum Fe implements Isotope {
-
         /** Iron 45 */   Fe45( 45.014420000000000),
         /** Iron 46 */   Fe46( 46.000630000000000),
         /** Iron 47 */   Fe47( 46.991850000000000),
@@ -878,7 +853,7 @@ public sealed interface Isotope extends Nuclide {
         /** Iron 71 */   Fe71( 70.966720000000000),
         /** Iron 72 */   Fe72( 71.969830000000000),
         /** Iron 73 */   Fe73( 72.975720000000000),
-        /** Iron 74 */   Fe74( 73.979350000000000),;
+        /** Iron 74 */   Fe74( 73.979350000000000);
 
         private double atomicMass;
 
@@ -891,7 +866,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Cobalt (cf. {@link Element#Co}) isotopes. */
     public enum Co implements Isotope {
-
         /** Cobalt 47 */ Co47( 47.010570000000000),
         /** Cobalt 48 */ Co48( 48.000930000000000),
         /** Cobalt 49 */ Co49( 48.988910000000000),
@@ -921,7 +895,7 @@ public sealed interface Isotope extends Nuclide {
         /** Cobalt 73 */ Co73( 72.960390000000000),
         /** Cobalt 74 */ Co74( 73.965150000000000),
         /** Cobalt 75 */ Co75( 74.968760000000000),
-        /** Cobalt 76 */ Co76( 75.974130000000000),;
+        /** Cobalt 76 */ Co76( 75.974130000000000);
 
         private double atomicMass;
 
@@ -934,7 +908,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Nickel (cf. {@link Element#Ni}) isotopes. */
     public enum Ni implements Isotope {
-
         /** Nickel 48 */ Ni48( 48.017690000000000),
         /** Nickel 49 */ Ni49( 49.007700000000000),
         /** Nickel 50 */ Ni50( 49.994740000000000),
@@ -966,7 +939,7 @@ public sealed interface Isotope extends Nuclide {
         /** Nickel 76 */ Ni76( 75.955330000000000),
         /** Nickel 77 */ Ni77( 76.960550000000000),
         /** Nickel 78 */ Ni78( 77.963360000000000),
-        /** Nickel 79 */ Ni79( 78.970250000000000),;
+        /** Nickel 79 */ Ni79( 78.970250000000000);
 
         private double atomicMass;
 
@@ -979,7 +952,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Copper (cf. {@link Element#Cu}) isotopes. */
     public enum Cu implements Isotope {
-
         /** Copper 52 */ Cu52( 51.996710000000000),
         /** Copper 53 */ Cu53( 52.984590000000000),
         /** Copper 54 */ Cu54( 53.976660000000000),
@@ -1010,7 +982,7 @@ public sealed interface Isotope extends Nuclide {
         /** Copper 79 */ Cu79( 78.955020000000000),
         /** Copper 80 */ Cu80( 79.960890000000000),
         /** Copper 81 */ Cu81( 80.965870000000000),
-        /** Copper 82 */ Cu82( 81.972440000000000),;
+        /** Copper 82 */ Cu82( 81.972440000000000);
 
         private double atomicMass;
 
@@ -1023,7 +995,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Zinc (cf. {@link Element#Zn}) isotopes. */
     public enum Zn implements Isotope {
-
         /** Zinc 54 */   Zn54( 53.992040000000000),
         /** Zinc 55 */   Zn55( 54.983980000000000),
         /** Zinc 56 */   Zn56( 55.972540000000000),
@@ -1055,7 +1026,7 @@ public sealed interface Isotope extends Nuclide {
         /** Zinc 82 */   Zn82( 81.954260000000000),
         /** Zinc 83 */   Zn83( 82.960560000000000),
         /** Zinc 84 */   Zn84( 83.965210000000000),
-        /** Zinc 85 */   Zn85( 84.972260000000000),;
+        /** Zinc 85 */   Zn85( 84.972260000000000);
 
         private double atomicMass;
 
@@ -1068,7 +1039,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Gallium (cf. {@link Element#Ga}) isotopes. */
     public enum Ga implements Isotope {
-
         /** Gallium 56 */ Ga56( 55.995360000000000),
         /** Gallium 57 */ Ga57( 56.983200000000000),
         /** Gallium 58 */ Ga58( 57.974780000000000),
@@ -1100,7 +1070,7 @@ public sealed interface Isotope extends Nuclide {
         /** Gallium 84 */ Ga84( 83.952460000000000),
         /** Gallium 85 */ Ga85( 84.956990000000000),
         /** Gallium 86 */ Ga86( 85.963010000000000),
-        /** Gallium 87 */ Ga87( 86.968240000000000),;
+        /** Gallium 87 */ Ga87( 86.968240000000000);
 
         private double atomicMass;
 
@@ -1113,7 +1083,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Germanium (cf. {@link Element#Ge}) isotopes. */
     public enum Ge implements Isotope {
-
         /** Germanium 58 */ Ge58( 57.991720000000000),
         /** Germanium 59 */ Ge59( 58.982490000000000),
         /** Germanium 60 */ Ge60( 59.970360000000000),
@@ -1146,7 +1115,7 @@ public sealed interface Isotope extends Nuclide {
         /** Germanium 87 */ Ge87( 86.952680000000000),
         /** Germanium 88 */ Ge88( 87.956910000000000),
         /** Germanium 89 */ Ge89( 88.963790000000000),
-        /** Germanium 90 */ Ge90( 89.968630000000000),;
+        /** Germanium 90 */ Ge90( 89.968630000000000);
 
         private double atomicMass;
 
@@ -1159,7 +1128,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Arsenic (cf. {@link Element#As}) isotopes. */
     public enum As implements Isotope {
-
         /** Arsenic 60 */ As60( 59.993880000000000),
         /** Arsenic 61 */ As61( 60.981120000000000),
         /** Arsenic 62 */ As62( 61.973610000000000),
@@ -1192,7 +1160,7 @@ public sealed interface Isotope extends Nuclide {
         /** Arsenic 89 */ As89( 88.949760000000000),
         /** Arsenic 90 */ As90( 89.955630000000000),
         /** Arsenic 91 */ As91( 90.960390000000000),
-        /** Arsenic 92 */ As92( 91.966740000000000),;
+        /** Arsenic 92 */ As92( 91.966740000000000);
 
         private double atomicMass;
 
@@ -1205,7 +1173,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Selenium (cf. {@link Element#Se}) isotopes. */
     public enum Se implements Isotope {
-
         /** Selenium 64 */ Se64( 63.971090000000000),
         /** Selenium 65 */ Se65( 64.964400000000000),
         /** Selenium 66 */ Se66( 65.955590000000000),
@@ -1237,7 +1204,7 @@ public sealed interface Isotope extends Nuclide {
         /** Selenium 92 */ Se92( 91.949840000000000),
         /** Selenium 93 */ Se93( 92.956290000000000),
         /** Selenium 94 */ Se94( 93.960490000000000),
-        /** Selenium 95 */ Se95( 94.967300000000000),;
+        /** Selenium 95 */ Se95( 94.967300000000000);
 
         private double atomicMass;
 
@@ -1250,7 +1217,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Bromine (cf. {@link Element#Br}) isotopes. */
     public enum Br implements Isotope {
-
         /** Bromine 67 */ Br67( 66.964650000000000),
         /** Bromine 68 */ Br68( 67.958730000000000),
         /** Bromine 69 */ Br69( 68.950497000000000),
@@ -1282,7 +1248,7 @@ public sealed interface Isotope extends Nuclide {
         /** Bromine 95 */ Br95( 94.953010000000000),
         /** Bromine 96 */ Br96( 95.959030000000000),
         /** Bromine 97 */ Br97( 96.963440000000000),
-        /** Bromine 98 */ Br98( 97.969460000000000),;
+        /** Bromine 98 */ Br98( 97.969460000000000);
 
         private double atomicMass;
 
@@ -1295,7 +1261,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Krypton (cf. {@link Element#Kr}) isotopes. */
     public enum Kr implements Isotope {
-
         /** Krypton 69 */ Kr69( 68.965180000000000),
         /** Krypton 70 */ Kr70( 69.956040000000000),
         /** Krypton 71 */ Kr71( 70.950270000000000),
@@ -1328,7 +1293,7 @@ public sealed interface Isotope extends Nuclide {
         /** Krypton 98 */ Kr98( 97.952430000000000),
         /** Krypton 99 */ Kr99( 98.958390000000000),
         /** Krypton 100 */Kr100( 99.962370000000000),
-        /** Krypton 101 */Kr101(100.968730000000000),;
+        /** Krypton 101 */Kr101(100.968730000000000);
 
         private double atomicMass;
 
@@ -1341,7 +1306,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Rubidium (cf. {@link Element#Rb}) isotopes. */
     public enum Rb implements Isotope {
-
         /** Rubidium 71 */ Rb71( 70.965320000000000),
         /** Rubidium 72 */ Rb72( 71.959080000000000),
         /** Rubidium 73 */ Rb73( 72.950530000000000),
@@ -1374,7 +1338,7 @@ public sealed interface Isotope extends Nuclide {
         /** Rubidium 100 */Rb100( 99.950030000000000),
         /** Rubidium 101 */Rb101(100.954040000000000),
         /** Rubidium 102 */Rb102(101.959520000000000),
-        /** Rubidium 103 */Rb103(102.963920000000000),;
+        /** Rubidium 103 */Rb103(102.963920000000000);
 
         private double atomicMass;
 
@@ -1387,7 +1351,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Strontium (cf. {@link Element#Sr}) isotopes. */
     public enum Sr implements Isotope {
-
         /** Strontium 73 */ Sr73( 72.965700000000000),
         /** Strontium 74 */ Sr74( 73.956170000000000),
         /** Strontium 75 */ Sr75( 74.949950000000000),
@@ -1422,7 +1385,7 @@ public sealed interface Isotope extends Nuclide {
         /** Strontium 104 */Sr104(103.952650000000000),
         /** Strontium 105 */Sr105(104.958550000000000),
         /** Strontium 106 */Sr106(105.962650000000000),
-        /** Strontium 107 */Sr107(106.968970000000000),;
+        /** Strontium 107 */Sr107(106.968970000000000);
 
         private double atomicMass;
 
@@ -1435,7 +1398,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Yttrium (cf. {@link Element#Y}) isotopes. */
     public enum Y implements Isotope {
-
         /** Yttrium 76 */  Y76( 75.958560000000000),
         /** Yttrium 77 */  Y77( 76.949781000000000),
         /** Yttrium 78 */  Y78( 77.943610000000000),
@@ -1469,7 +1431,7 @@ public sealed interface Isotope extends Nuclide {
         /** Yttrium 106 */ Y106(105.950560000000000),
         /** Yttrium 107 */ Y107(106.954520000000000),
         /** Yttrium 108 */ Y108(107.959960000000000),
-        /** Yttrium 109 */ Y109(108.964360000000000),;
+        /** Yttrium 109 */ Y109(108.964360000000000);
 
         private double atomicMass;
 
@@ -1482,7 +1444,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Zirconium (cf. {@link Element#Zr}) isotopes. */
     public enum Zr implements Isotope {
-
         /** Zirconium 78 */ Zr78( 77.955660000000000),
         /** Zirconium 79 */ Zr79( 78.949480000000000),
         /** Zirconium 80 */ Zr80( 79.940400000000000),
@@ -1517,7 +1478,7 @@ public sealed interface Isotope extends Nuclide {
         /** Zirconium 109 */Zr109(108.950410000000000),
         /** Zirconium 110 */Zr110(109.953960000000000),
         /** Zirconium 111 */Zr111(110.959680000000000),
-        /** Zirconium 112 */Zr112(111.963700000000000),;
+        /** Zirconium 112 */Zr112(111.963700000000000);
 
         private double atomicMass;
 
@@ -1530,7 +1491,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Niobium (cf. {@link Element#Nb}) isotopes. */
     public enum Nb implements Isotope {
-
         /** Niobium 81 */ Nb81( 80.949600000000000),
         /** Niobium 82 */ Nb82( 81.943960000000000),
         /** Niobium 83 */ Nb83( 82.937290000000000),
@@ -1565,7 +1525,7 @@ public sealed interface Isotope extends Nuclide {
         /** Niobium 112 */Nb112(111.952470000000000),
         /** Niobium 113 */Nb113(112.956510000000000),
         /** Niobium 114 */Nb114(113.962010000000000),
-        /** Niobium 115 */Nb115(114.966340000000000),;
+        /** Niobium 115 */Nb115(114.966340000000000);
 
         private double atomicMass;
 
@@ -1578,7 +1538,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Molybdenum (cf. {@link Element#Mo}) isotopes. */
     public enum Mo implements Isotope {
-
         /** Molybdenum 83 */ Mo83( 82.949880000000000),
         /** Molybdenum 84 */ Mo84( 83.941490000000000),
         /** Molybdenum 85 */ Mo85( 84.938261000000000),
@@ -1613,7 +1572,7 @@ public sealed interface Isotope extends Nuclide {
         /** Molybdenum 114 */Mo114(113.946530000000000),
         /** Molybdenum 115 */Mo115(114.951960000000000),
         /** Molybdenum 116 */Mo116(115.955450000000000),
-        /** Molybdenum 117 */Mo117(116.961170000000000),;
+        /** Molybdenum 117 */Mo117(116.961170000000000);
 
         private double atomicMass;
 
@@ -1626,7 +1585,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Technetium (cf. {@link Element#Tc}) isotopes. */
     public enum Tc implements Isotope {
-
         /** Technetium 85 */ Tc85( 84.950580000000000),
         /** Technetium 86 */ Tc86( 85.944930000000000),
         /** Technetium 87 */ Tc87( 86.938067200000000),
@@ -1662,7 +1620,7 @@ public sealed interface Isotope extends Nuclide {
         /** Technetium 117 */Tc117(116.948060000000000),
         /** Technetium 118 */Tc118(117.952990000000000),
         /** Technetium 119 */Tc119(118.956660000000000),
-        /** Technetium 120 */Tc120(119.961870000000000),;
+        /** Technetium 120 */Tc120(119.961870000000000);
 
         private double atomicMass;
 
@@ -1675,7 +1633,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Ruthenium (cf. {@link Element#Ru}) isotopes. */
     public enum Ru implements Isotope {
-
         /** Ruthenium 87 */ Ru87( 86.950690000000000),
         /** Ruthenium 88 */ Ru88( 87.941600000000000),
         /** Ruthenium 89 */ Ru89( 88.937620000000000),
@@ -1713,7 +1670,7 @@ public sealed interface Isotope extends Nuclide {
         /** Ruthenium 121 */Ru121(120.951640000000000),
         /** Ruthenium 122 */Ru122(121.954470000000000),
         /** Ruthenium 123 */Ru123(122.959890000000000),
-        /** Ruthenium 124 */Ru124(123.963050000000000),;
+        /** Ruthenium 124 */Ru124(123.963050000000000);
 
         private double atomicMass;
 
@@ -1726,7 +1683,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Rhodium (cf. {@link Element#Rh}) isotopes. */
     public enum Rh implements Isotope {
-
         /** Rhodium 89 */ Rh89( 88.950580000000000),
         /** Rhodium 90 */ Rh90( 89.944220000000000),
         /** Rhodium 91 */ Rh91( 90.936880000000000),
@@ -1764,7 +1720,7 @@ public sealed interface Isotope extends Nuclide {
         /** Rhodium 123 */Rh123(122.946850000000000),
         /** Rhodium 124 */Rh124(123.951510000000000),
         /** Rhodium 125 */Rh125(124.954690000000000),
-        /** Rhodium 126 */Rh126(125.959460000000000),;
+        /** Rhodium 126 */Rh126(125.959460000000000);
 
         private double atomicMass;
 
@@ -1777,7 +1733,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Palladium (cf. {@link Element#Pd}) isotopes. */
     public enum Pd implements Isotope {
-
         /** Palladium 91 */ Pd91( 90.950320000000000),
         /** Palladium 92 */ Pd92( 91.940880000000000),
         /** Palladium 93 */ Pd93( 92.936510000000000),
@@ -1815,7 +1770,7 @@ public sealed interface Isotope extends Nuclide {
         /** Palladium 125 */Pd125(124.941790000000000),
         /** Palladium 126 */Pd126(125.944160000000000),
         /** Palladium 127 */Pd127(126.949070000000000),
-        /** Palladium 128 */Pd128(127.951830000000000),;
+        /** Palladium 128 */Pd128(127.951830000000000);
 
         private double atomicMass;
 
@@ -1828,7 +1783,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Silver (cf. {@link Element#Ag}) isotopes. */
     public enum Ag implements Isotope {
-
         /** Silver 93 */ Ag93( 92.950330000000000),
         /** Silver 94 */ Ag94( 93.943730000000000),
         /** Silver 95 */ Ag95( 94.936020000000000),
@@ -1866,7 +1820,7 @@ public sealed interface Isotope extends Nuclide {
         /** Silver 127 */Ag127(126.937110000000000),
         /** Silver 128 */Ag128(127.941060000000000),
         /** Silver 129 */Ag129(128.943950000000000),
-        /** Silver 130 */Ag130(129.950700000000000),;
+        /** Silver 130 */Ag130(129.950700000000000);
 
         private double atomicMass;
 
@@ -1879,7 +1833,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Cadmium (cf. {@link Element#Cd}) isotopes. */
     public enum Cd implements Isotope {
-
         /** Cadmium 95 */ Cd95( 94.949940000000000),
         /** Cadmium 96 */ Cd96( 95.940340000000000),
         /** Cadmium 97 */ Cd97( 96.935100000000000),
@@ -1918,7 +1871,7 @@ public sealed interface Isotope extends Nuclide {
         /** Cadmium 130 */Cd130(129.933940000000000),
         /** Cadmium 131 */Cd131(130.940600000000000),
         /** Cadmium 132 */Cd132(131.946040000000000),
-        /** Cadmium 133 */Cd133(132.952850000000000),;
+        /** Cadmium 133 */Cd133(132.952850000000000);
 
         private double atomicMass;
 
@@ -1931,7 +1884,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Indium (cf. {@link Element#In}) isotopes. */
     public enum In implements Isotope {
-
         /** Indium 97 */ In97( 96.949340000000000),
         /** Indium 98 */ In98( 97.942140000000000),
         /** Indium 99 */ In99( 98.934110000000000),
@@ -1970,7 +1922,7 @@ public sealed interface Isotope extends Nuclide {
         /** Indium 132 */In132(131.933001000000000),
         /** Indium 133 */In133(132.938310000000000),
         /** Indium 134 */In134(133.944540000000000),
-        /** Indium 135 */In135(134.950050000000000),;
+        /** Indium 135 */In135(134.950050000000000);
 
         private double atomicMass;
 
@@ -1983,7 +1935,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Tin (cf. {@link Element#Sn}) isotopes. */
     public enum Sn implements Isotope {
-
         /** Tin 99 */    Sn99( 98.948530000000000),
         /** Tin 100 */  Sn100( 99.938500000000000),
         /** Tin 101 */  Sn101(100.935260000000000),
@@ -2023,7 +1974,7 @@ public sealed interface Isotope extends Nuclide {
         /** Tin 135 */  Sn135(134.934908600000000),
         /** Tin 136 */  Sn136(135.939990000000000),
         /** Tin 137 */  Sn137(136.946550000000000),
-        /** Tin 138 */  Sn138(137.951840000000000),;
+        /** Tin 138 */  Sn138(137.951840000000000);
 
         private double atomicMass;
 
@@ -2036,7 +1987,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Antimony (cf. {@link Element#Sb}) isotopes. */
     public enum Sb implements Isotope {
-
         /** Antimony 103 */Sb103(102.939690000000000),
         /** Antimony 104 */Sb104(103.936480000000000),
         /** Antimony 105 */Sb105(104.931276000000000),
@@ -2074,7 +2024,7 @@ public sealed interface Isotope extends Nuclide {
         /** Antimony 137 */Sb137(136.935550000000000),
         /** Antimony 138 */Sb138(137.941450000000000),
         /** Antimony 139 */Sb139(138.946550000000000),
-        /** Antimony 140 */Sb140(139.952830000000000),;
+        /** Antimony 140 */Sb140(139.952830000000000);
 
         private double atomicMass;
 
@@ -2087,7 +2037,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Tellurium (cf. {@link Element#Te}) isotopes. */
     public enum Te implements Isotope {
-
         /** Tellurium 105 */Te105(104.943300000000000),
         /** Tellurium 106 */Te106(105.937500000000000),
         /** Tellurium 107 */Te107(106.935012000000000),
@@ -2126,7 +2075,7 @@ public sealed interface Isotope extends Nuclide {
         /** Tellurium 140 */Te140(139.939499000000000),
         /** Tellurium 141 */Te141(140.945800000000000),
         /** Tellurium 142 */Te142(141.950220000000000),
-        /** Tellurium 143 */Te143(142.956760000000000),;
+        /** Tellurium 143 */Te143(142.956760000000000);
 
         private double atomicMass;
 
@@ -2139,7 +2088,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Iodine (cf. {@link Element#I}) isotopes. */
     public enum I implements Isotope {
-
         /** Iodine 107 */ I107(106.946780000000000),
         /** Iodine 108 */ I108(107.943480000000000),
         /** Iodine 109 */ I109(108.938085300000000),
@@ -2178,7 +2126,7 @@ public sealed interface Isotope extends Nuclide {
         /** Iodine 142 */ I142(141.941200000000000),
         /** Iodine 143 */ I143(142.945650000000000),
         /** Iodine 144 */ I144(143.951390000000000),
-        /** Iodine 145 */ I145(144.956050000000000),;
+        /** Iodine 145 */ I145(144.956050000000000);
 
         private double atomicMass;
 
@@ -2191,7 +2139,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Xenon (cf. {@link Element#Xe}) isotopes. */
     public enum Xe implements Isotope {
-
         /** Xenon 109 */Xe109(108.950430000000000),
         /** Xenon 110 */Xe110(109.944260000000000),
         /** Xenon 111 */Xe111(110.941607000000000),
@@ -2231,7 +2178,7 @@ public sealed interface Isotope extends Nuclide {
         /** Xenon 145 */Xe145(144.944720000000000),
         /** Xenon 146 */Xe146(145.948518000000000),
         /** Xenon 147 */Xe147(146.954260000000000),
-        /** Xenon 148 */Xe148(147.958130000000000),;
+        /** Xenon 148 */Xe148(147.958130000000000);
 
         private double atomicMass;
 
@@ -2244,7 +2191,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Caesium (cf. {@link Element#Cs}) isotopes. */
     public enum Cs implements Isotope {
-
         /** Caesium 112 */Cs112(111.950309000000000),
         /** Caesium 113 */Cs113(112.944429100000000),
         /** Caesium 114 */Cs114(113.941296000000000),
@@ -2284,7 +2230,7 @@ public sealed interface Isotope extends Nuclide {
         /** Caesium 148 */Cs148(147.949230000000000),
         /** Caesium 149 */Cs149(148.953020000000000),
         /** Caesium 150 */Cs150(149.958330000000000),
-        /** Caesium 151 */Cs151(150.962580000000000),;
+        /** Caesium 151 */Cs151(150.962580000000000);
 
         private double atomicMass;
 
@@ -2297,7 +2243,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Barium (cf. {@link Element#Ba}) isotopes. */
     public enum Ba implements Isotope {
-
         /** Barium 114 */Ba114(113.950660000000000),
         /** Barium 115 */Ba115(114.947370000000000),
         /** Barium 116 */Ba116(115.941280000000000),
@@ -2337,7 +2282,7 @@ public sealed interface Isotope extends Nuclide {
         /** Barium 150 */Ba150(149.946050000000000),
         /** Barium 151 */Ba151(150.951270000000000),
         /** Barium 152 */Ba152(151.954810000000000),
-        /** Barium 153 */Ba153(152.960360000000000),;
+        /** Barium 153 */Ba153(152.960360000000000);
 
         private double atomicMass;
 
@@ -2350,7 +2295,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Lanthanum (cf. {@link Element#La}) isotopes. */
     public enum La implements Isotope {
-
         /** Lanthanum 116 */La116(115.956300000000000),
         /** Lanthanum 117 */La117(116.949990000000000),
         /** Lanthanum 118 */La118(117.946730000000000),
@@ -2390,7 +2334,7 @@ public sealed interface Isotope extends Nuclide {
         /** Lanthanum 152 */La152(151.946820000000000),
         /** Lanthanum 153 */La153(152.950360000000000),
         /** Lanthanum 154 */La154(153.955170000000000),
-        /** Lanthanum 155 */La155(154.959010000000000),;
+        /** Lanthanum 155 */La155(154.959010000000000);
 
         private double atomicMass;
 
@@ -2403,7 +2347,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Cerium (cf. {@link Element#Ce}) isotopes. */
     public enum Ce implements Isotope {
-
         /** Cerium 119 */Ce119(118.952710000000000),
         /** Cerium 120 */Ce120(119.946540000000000),
         /** Cerium 121 */Ce121(120.943350000000000),
@@ -2442,7 +2385,7 @@ public sealed interface Isotope extends Nuclide {
         /** Cerium 154 */Ce154(153.943800000000000),
         /** Cerium 155 */Ce155(154.948550000000000),
         /** Cerium 156 */Ce156(155.951830000000000),
-        /** Cerium 157 */Ce157(156.957050000000000),;
+        /** Cerium 157 */Ce157(156.957050000000000);
 
         private double atomicMass;
 
@@ -2455,7 +2398,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Praseodymium (cf. {@link Element#Pr}) isotopes. */
     public enum Pr implements Isotope {
-
         /** Praseodymium 121 */Pr121(120.955320000000000),
         /** Praseodymium 122 */Pr122(121.951750000000000),
         /** Praseodymium 123 */Pr123(122.945960000000000),
@@ -2494,7 +2436,7 @@ public sealed interface Isotope extends Nuclide {
         /** Praseodymium 156 */Pr156(155.944640000000000),
         /** Praseodymium 157 */Pr157(156.947890000000000),
         /** Praseodymium 158 */Pr158(157.952410000000000),
-        /** Praseodymium 159 */Pr159(158.955890000000000),;
+        /** Praseodymium 159 */Pr159(158.955890000000000);
 
         private double atomicMass;
 
@@ -2507,7 +2449,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Neodymium (cf. {@link Element#Nd}) isotopes. */
     public enum Nd implements Isotope {
-
         /** Neodymium 124 */Nd124(123.952200000000000),
         /** Neodymium 125 */Nd125(124.948900000000000),
         /** Neodymium 126 */Nd126(125.943110000000000),
@@ -2545,7 +2486,7 @@ public sealed interface Isotope extends Nuclide {
         /** Neodymium 158 */Nd158(157.941970000000000),
         /** Neodymium 159 */Nd159(158.946530000000000),
         /** Neodymium 160 */Nd160(159.949400000000000),
-        /** Neodymium 161 */Nd161(160.954280000000000),;
+        /** Neodymium 161 */Nd161(160.954280000000000);
 
         private double atomicMass;
 
@@ -2558,7 +2499,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Promethium (cf. {@link Element#Pm}) isotopes. */
     public enum Pm implements Isotope {
-
         /** Promethium 126 */Pm126(125.957920000000000),
         /** Promethium 127 */Pm127(126.951920000000000),
         /** Promethium 128 */Pm128(127.948700000000000),
@@ -2596,7 +2536,7 @@ public sealed interface Isotope extends Nuclide {
         /** Promethium 160 */Pm160(159.943100000000000),
         /** Promethium 161 */Pm161(160.946070000000000),
         /** Promethium 162 */Pm162(161.950220000000000),
-        /** Promethium 163 */Pm163(162.953570000000000),;
+        /** Promethium 163 */Pm163(162.953570000000000);
 
         private double atomicMass;
 
@@ -2609,7 +2549,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Samarium (cf. {@link Element#Sm}) isotopes. */
     public enum Sm implements Isotope {
-
         /** Samarium 128 */Sm128(127.958420000000000),
         /** Samarium 129 */Sm129(128.954760000000000),
         /** Samarium 130 */Sm130(129.949000000000000),
@@ -2647,7 +2586,7 @@ public sealed interface Isotope extends Nuclide {
         /** Samarium 162 */Sm162(161.941460000000000),
         /** Samarium 163 */Sm163(162.945550000000000),
         /** Samarium 164 */Sm164(163.948360000000000),
-        /** Samarium 165 */Sm165(164.952970000000000),;
+        /** Samarium 165 */Sm165(164.952970000000000);
 
         private double atomicMass;
 
@@ -2660,7 +2599,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Europium (cf. {@link Element#Eu}) isotopes. */
     public enum Eu implements Isotope {
-
         /** Europium 130 */Eu130(129.963690000000000),
         /** Europium 131 */Eu131(130.957840000000000),
         /** Europium 132 */Eu132(131.954670000000000),
@@ -2698,7 +2636,7 @@ public sealed interface Isotope extends Nuclide {
         /** Europium 164 */Eu164(163.942740000000000),
         /** Europium 165 */Eu165(164.945590000000000),
         /** Europium 166 */Eu166(165.949620000000000),
-        /** Europium 167 */Eu167(166.952890000000000),;
+        /** Europium 167 */Eu167(166.952890000000000);
 
         private double atomicMass;
 
@@ -2711,7 +2649,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Gadolinium (cf. {@link Element#Gd}) isotopes. */
     public enum Gd implements Isotope {
-
         /** Gadolinium 133 */Gd133(132.961330000000000),
         /** Gadolinium 134 */Gd134(133.955660000000000),
         /** Gadolinium 135 */Gd135(134.952450000000000),
@@ -2748,7 +2685,7 @@ public sealed interface Isotope extends Nuclide {
         /** Gadolinium 166 */Gd166(165.941460000000000),
         /** Gadolinium 167 */Gd167(166.945450000000000),
         /** Gadolinium 168 */Gd168(167.948080000000000),
-        /** Gadolinium 169 */Gd169(168.952600000000000),;
+        /** Gadolinium 169 */Gd169(168.952600000000000);
 
         private double atomicMass;
 
@@ -2761,7 +2698,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Terbium (cf. {@link Element#Tb}) isotopes. */
     public enum Tb implements Isotope {
-
         /** Terbium 135 */Tb135(134.964760000000000),
         /** Terbium 136 */Tb136(135.961290000000000),
         /** Terbium 137 */Tb137(136.956020000000000),
@@ -2798,7 +2734,7 @@ public sealed interface Isotope extends Nuclide {
         /** Terbium 168 */Tb168(167.943400000000000),
         /** Terbium 169 */Tb169(168.945970000000000),
         /** Terbium 170 */Tb170(169.949840000000000),
-        /** Terbium 171 */Tb171(170.952730000000000),;
+        /** Terbium 171 */Tb171(170.952730000000000);
 
         private double atomicMass;
 
@@ -2811,7 +2747,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Dysprosium (cf. {@link Element#Dy}) isotopes. */
     public enum Dy implements Isotope {
-
         /** Dysprosium 138 */Dy138(137.962500000000000),
         /** Dysprosium 139 */Dy139(138.959590000000000),
         /** Dysprosium 140 */Dy140(139.954020000000000),
@@ -2847,7 +2782,7 @@ public sealed interface Isotope extends Nuclide {
         /** Dysprosium 170 */Dy170(169.942390000000000),
         /** Dysprosium 171 */Dy171(170.946120000000000),
         /** Dysprosium 172 */Dy172(171.948460000000000),
-        /** Dysprosium 173 */Dy173(172.952830000000000),;
+        /** Dysprosium 173 */Dy173(172.952830000000000);
 
         private double atomicMass;
 
@@ -2860,7 +2795,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Holmium (cf. {@link Element#Ho}) isotopes. */
     public enum Ho implements Isotope {
-
         /** Holmium 140 */Ho140(139.968590000000000),
         /** Holmium 141 */Ho141(140.963110000000000),
         /** Holmium 142 */Ho142(141.960010000000000),
@@ -2896,7 +2830,7 @@ public sealed interface Isotope extends Nuclide {
         /** Holmium 172 */Ho172(171.944730000000000),
         /** Holmium 173 */Ho173(172.947020000000000),
         /** Holmium 174 */Ho174(173.950950000000000),
-        /** Holmium 175 */Ho175(174.953620000000000),;
+        /** Holmium 175 */Ho175(174.953620000000000);
 
         private double atomicMass;
 
@@ -2909,7 +2843,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Erbium (cf. {@link Element#Er}) isotopes. */
     public enum Er implements Isotope {
-
         /** Erbium 142 */Er142(141.970100000000000),
         /** Erbium 143 */Er143(142.966620000000000),
         /** Erbium 144 */Er144(143.960700000000000),
@@ -2945,7 +2878,7 @@ public sealed interface Isotope extends Nuclide {
         /** Erbium 174 */Er174(173.944230000000000),
         /** Erbium 175 */Er175(174.947770000000000),
         /** Erbium 176 */Er176(175.949940000000000),
-        /** Erbium 177 */Er177(176.953990000000000),;
+        /** Erbium 177 */Er177(176.953990000000000);
 
         private double atomicMass;
 
@@ -2958,7 +2891,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Thulium (cf. {@link Element#Tm}) isotopes. */
     public enum Tm implements Isotope {
-
         /** Thulium 144 */Tm144(143.976280000000000),
         /** Thulium 145 */Tm145(144.970390000000000),
         /** Thulium 146 */Tm146(145.966840000000000),
@@ -2994,7 +2926,7 @@ public sealed interface Isotope extends Nuclide {
         /** Thulium 176 */Tm176(175.947000000000000),
         /** Thulium 177 */Tm177(176.949040000000000),
         /** Thulium 178 */Tm178(177.952640000000000),
-        /** Thulium 179 */Tm179(178.955340000000000),;
+        /** Thulium 179 */Tm179(178.955340000000000);
 
         private double atomicMass;
 
@@ -3007,7 +2939,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Ytterbium (cf. {@link Element#Yb}) isotopes. */
     public enum Yb implements Isotope {
-
         /** Ytterbium 148 */Yb148(147.967580000000000),
         /** Ytterbium 149 */Yb149(148.964360000000000),
         /** Ytterbium 150 */Yb150(149.958520000000000),
@@ -3041,7 +2972,7 @@ public sealed interface Isotope extends Nuclide {
         /** Ytterbium 178 */Yb178(177.946651000000000),
         /** Ytterbium 179 */Yb179(178.950040000000000),
         /** Ytterbium 180 */Yb180(179.952120000000000),
-        /** Ytterbium 181 */Yb181(180.955890000000000),;
+        /** Ytterbium 181 */Yb181(180.955890000000000);
 
         private double atomicMass;
 
@@ -3054,7 +2985,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Lutetium (cf. {@link Element#Lu}) isotopes. */
     public enum Lu implements Isotope {
-
         /** Lutetium 150 */Lu150(149.973550000000000),
         /** Lutetium 151 */Lu151(150.967680000000000),
         /** Lutetium 152 */Lu152(151.964120000000000),
@@ -3090,7 +3020,7 @@ public sealed interface Isotope extends Nuclide {
         /** Lutetium 182 */Lu182(181.955040000000000),
         /** Lutetium 183 */Lu183(182.957363000000000),
         /** Lutetium 184 */Lu184(183.960910000000000),
-        /** Lutetium 185 */Lu185(184.963620000000000),;
+        /** Lutetium 185 */Lu185(184.963620000000000);
 
         private double atomicMass;
 
@@ -3103,7 +3033,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Hafnium (cf. {@link Element#Hf}) isotopes. */
     public enum Hf implements Isotope {
-
         /** Hafnium 153 */Hf153(152.970690000000000),
         /** Hafnium 154 */Hf154(153.964860000000000),
         /** Hafnium 155 */Hf155(154.963110000000000),
@@ -3140,7 +3069,7 @@ public sealed interface Isotope extends Nuclide {
         /** Hafnium 186 */Hf186(185.960897000000000),
         /** Hafnium 187 */Hf187(186.964770000000000),
         /** Hafnium 188 */Hf188(187.966850000000000),
-        /** Hafnium 189 */Hf189(188.970840000000000),;
+        /** Hafnium 189 */Hf189(188.970840000000000);
 
         private double atomicMass;
 
@@ -3153,7 +3082,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Tantalum (cf. {@link Element#Ta}) isotopes. */
     public enum Ta implements Isotope {
-
         /** Tantalum 155 */Ta155(154.974240000000000),
         /** Tantalum 156 */Ta156(155.972030000000000),
         /** Tantalum 157 */Ta157(156.968180000000000),
@@ -3191,7 +3119,7 @@ public sealed interface Isotope extends Nuclide {
         /** Tantalum 189 */Ta189(188.965830000000000),
         /** Tantalum 190 */Ta190(189.969390000000000),
         /** Tantalum 191 */Ta191(190.971560000000000),
-        /** Tantalum 192 */Ta192(191.975140000000000),;
+        /** Tantalum 192 */Ta192(191.975140000000000);
 
         private double atomicMass;
 
@@ -3204,7 +3132,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Tungsten (cf. {@link Element#W}) isotopes. */
     public enum W implements Isotope {
-
         /** Tungsten 157 */ W157(156.978840000000000),
         /** Tungsten 158 */ W158(157.974560000000000),
         /** Tungsten 159 */ W159(158.972640000000000),
@@ -3242,7 +3169,7 @@ public sealed interface Isotope extends Nuclide {
         /** Tungsten 191 */ W191(190.966531000000000),
         /** Tungsten 192 */ W192(191.968170000000000),
         /** Tungsten 193 */ W193(192.971780000000000),
-        /** Tungsten 194 */ W194(193.973670000000000),;
+        /** Tungsten 194 */ W194(193.973670000000000);
 
         private double atomicMass;
 
@@ -3255,7 +3182,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Rhenium (cf. {@link Element#Re}) isotopes. */
     public enum Re implements Isotope {
-
         /** Rhenium 159 */Re159(158.984180000000000),
         /** Rhenium 160 */Re160(159.981820000000000),
         /** Rhenium 161 */Re161(160.977570000000000),
@@ -3295,7 +3221,7 @@ public sealed interface Isotope extends Nuclide {
         /** Rhenium 195 */Re195(194.972540000000000),
         /** Rhenium 196 */Re196(195.975800000000000),
         /** Rhenium 197 */Re197(196.977990000000000),
-        /** Rhenium 198 */Re198(197.981600000000000),;
+        /** Rhenium 198 */Re198(197.981600000000000);
 
         private double atomicMass;
 
@@ -3308,7 +3234,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Osmium (cf. {@link Element#Os}) isotopes. */
     public enum Os implements Isotope {
-
         /** Osmium 161 */Os161(160.989030000000000),
         /** Osmium 162 */Os162(161.984430000000000),
         /** Osmium 163 */Os163(162.982410000000000),
@@ -3350,7 +3275,7 @@ public sealed interface Isotope extends Nuclide {
         /** Osmium 199 */Os199(198.978010000000000),
         /** Osmium 200 */Os200(199.979840000000000),
         /** Osmium 201 */Os201(200.983640000000000),
-        /** Osmium 202 */Os202(201.985950000000000),;
+        /** Osmium 202 */Os202(201.985950000000000);
 
         private double atomicMass;
 
@@ -3363,7 +3288,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Iridium (cf. {@link Element#Ir}) isotopes. */
     public enum Ir implements Isotope {
-
         /** Iridium 164 */Ir164(163.991910000000000),
         /** Iridium 165 */Ir165(164.987500000000000),
         /** Iridium 166 */Ir166(165.985660000000000),
@@ -3404,7 +3328,7 @@ public sealed interface Isotope extends Nuclide {
         /** Iridium 201 */Ir201(200.978640000000000),
         /** Iridium 202 */Ir202(201.981990000000000),
         /** Iridium 203 */Ir203(202.984230000000000),
-        /** Iridium 204 */Ir204(203.989600000000000),;
+        /** Iridium 204 */Ir204(203.989600000000000);
 
         private double atomicMass;
 
@@ -3417,7 +3341,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Platinum (cf. {@link Element#Pt}) isotopes. */
     public enum Pt implements Isotope {
-
         /** Platinum 166 */Pt166(165.994860000000000),
         /** Platinum 167 */Pt167(166.992690000000000),
         /** Platinum 168 */Pt168(167.988130000000000),
@@ -3458,7 +3381,7 @@ public sealed interface Isotope extends Nuclide {
         /** Platinum 203 */Pt203(202.978930000000000),
         /** Platinum 204 */Pt204(203.980760000000000),
         /** Platinum 205 */Pt205(204.986080000000000),
-        /** Platinum 206 */Pt206(205.989660000000000),;
+        /** Platinum 206 */Pt206(205.989660000000000);
 
         private double atomicMass;
 
@@ -3471,7 +3394,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Gold (cf. {@link Element#Au}) isotopes. */
     public enum Au implements Isotope {
-
         /** Gold 169 */ Au169(168.998080000000000),
         /** Gold 170 */ Au170(169.995970000000000),
         /** Gold 171 */ Au171(170.991876000000000),
@@ -3513,7 +3435,7 @@ public sealed interface Isotope extends Nuclide {
         /** Gold 207 */ Au207(206.988400000000000),
         /** Gold 208 */ Au208(207.993450000000000),
         /** Gold 209 */ Au209(208.997350000000000),
-        /** Gold 210 */ Au210(210.002500000000000),;
+        /** Gold 210 */ Au210(210.002500000000000);
 
         private double atomicMass;
 
@@ -3526,7 +3448,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Mercury (cf. {@link Element#Hg}) isotopes. */
     public enum Hg implements Isotope {
-
         /** Mercury 171 */Hg171(171.003530000000000),
         /** Mercury 172 */Hg172(171.998810000000000),
         /** Mercury 173 */Hg173(172.997090000000000),
@@ -3572,7 +3493,7 @@ public sealed interface Isotope extends Nuclide {
         /** Mercury 213 */Hg213(213.008230000000000),
         /** Mercury 214 */Hg214(214.012000000000000),
         /** Mercury 215 */Hg215(215.017400000000000),
-        /** Mercury 216 */Hg216(216.021320000000000),;
+        /** Mercury 216 */Hg216(216.021320000000000);
 
         private double atomicMass;
 
@@ -3585,7 +3506,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Thallium (cf. {@link Element#Tl}) isotopes. */
     public enum Tl implements Isotope {
-
         /** Thallium 176 */Tl176(176.000624000000000),
         /** Thallium 177 */Tl177(176.996431000000000),
         /** Thallium 178 */Tl178(177.994850000000000),
@@ -3628,7 +3548,7 @@ public sealed interface Isotope extends Nuclide {
         /** Thallium 215 */Tl215(215.010640000000000),
         /** Thallium 216 */Tl216(216.015800000000000),
         /** Thallium 217 */Tl217(217.019660000000000),
-        /** Thallium 218 */Tl218(218.024790000000000),;
+        /** Thallium 218 */Tl218(218.024790000000000);
 
         private double atomicMass;
 
@@ -3641,7 +3561,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Lead (cf. {@link Element#Pb}) isotopes. */
     public enum Pb implements Isotope {
-
         /** Lead 178 */ Pb178(178.003831000000000),
         /** Lead 179 */ Pb179(179.002201000000000),
         /** Lead 180 */ Pb180(179.997928000000000),
@@ -3684,7 +3603,7 @@ public sealed interface Isotope extends Nuclide {
         /** Lead 217 */ Pb217(217.013140000000000),
         /** Lead 218 */ Pb218(218.016590000000000),
         /** Lead 219 */ Pb219(219.021770000000000),
-        /** Lead 220 */ Pb220(220.025410000000000),;
+        /** Lead 220 */ Pb220(220.025410000000000);
 
         private double atomicMass;
 
@@ -3697,7 +3616,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Bismuth (cf. {@link Element#Bi}) isotopes. */
     public enum Bi implements Isotope {
-
         /** Bismuth 184 */Bi184(184.001275000000000),
         /** Bismuth 185 */Bi185(184.997600000000000),
         /** Bismuth 186 */Bi186(185.996644000000000),
@@ -3738,7 +3656,7 @@ public sealed interface Isotope extends Nuclide {
         /** Bismuth 221 */Bi221(221.025870000000000),
         /** Bismuth 222 */Bi222(222.030780000000000),
         /** Bismuth 223 */Bi223(223.034500000000000),
-        /** Bismuth 224 */Bi224(224.039470000000000),;
+        /** Bismuth 224 */Bi224(224.039470000000000);
 
         private double atomicMass;
 
@@ -3751,7 +3669,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Polonium (cf. {@link Element#Po}) isotopes. */
     public enum Po implements Isotope {
-
         /** Polonium 186 */Po186(186.004393000000000),
         /** Polonium 187 */Po187(187.003041000000000),
         /** Polonium 188 */Po188(187.999416000000000),
@@ -3793,7 +3710,7 @@ public sealed interface Isotope extends Nuclide {
         /** Polonium 224 */Po224(224.032110000000000),
         /** Polonium 225 */Po225(225.037070000000000),
         /** Polonium 226 */Po226(226.040310000000000),
-        /** Polonium 227 */Po227(227.045390000000000),;
+        /** Polonium 227 */Po227(227.045390000000000);
 
         private double atomicMass;
 
@@ -3806,7 +3723,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Astatine (cf. {@link Element#At}) isotopes. */
     public enum At implements Isotope {
-
         /** Astatine 191 */At191(191.004148000000000),
         /** Astatine 192 */At192(192.003152000000000),
         /** Astatine 193 */At193(192.999927000000000),
@@ -3845,7 +3761,7 @@ public sealed interface Isotope extends Nuclide {
         /** Astatine 226 */At226(226.037160000000000),
         /** Astatine 227 */At227(227.040240000000000),
         /** Astatine 228 */At228(228.044750000000000),
-        /** Astatine 229 */At229(229.048120000000000),;
+        /** Astatine 229 */At229(229.048120000000000);
 
         private double atomicMass;
 
@@ -3858,7 +3774,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Radon (cf. {@link Element#Rn}) isotopes. */
     public enum Rn implements Isotope {
-
         /** Radon 193 */Rn193(193.009708000000000),
         /** Radon 194 */Rn194(194.006144000000000),
         /** Radon 195 */Rn195(195.005422000000000),
@@ -3897,7 +3812,7 @@ public sealed interface Isotope extends Nuclide {
         /** Radon 228 */Rn228(228.037835000000000),
         /** Radon 229 */Rn229(229.042257000000000),
         /** Radon 230 */Rn230(230.045140000000000),
-        /** Radon 231 */Rn231(231.049870000000000),;
+        /** Radon 231 */Rn231(231.049870000000000);
 
         private double atomicMass;
 
@@ -3910,7 +3825,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Francium (cf. {@link Element#Fr}) isotopes. */
     public enum Fr implements Isotope {
-
         /** Francium 199 */Fr199(199.007259000000000),
         /** Francium 200 */Fr200(200.006586000000000),
         /** Francium 201 */Fr201(201.003867000000000),
@@ -3945,7 +3859,7 @@ public sealed interface Isotope extends Nuclide {
         /** Francium 230 */Fr230(230.042416000000000),
         /** Francium 231 */Fr231(231.045158000000000),
         /** Francium 232 */Fr232(232.049370000000000),
-        /** Francium 233 */Fr233(233.052640000000000),;
+        /** Francium 233 */Fr233(233.052640000000000);
 
         private double atomicMass;
 
@@ -3958,7 +3872,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Radium (cf. {@link Element#Ra}) isotopes. */
     public enum Ra implements Isotope {
-
         /** Radium 201 */Ra201(201.012710000000000),
         /** Radium 202 */Ra202(202.009760000000000),
         /** Radium 203 */Ra203(203.009304000000000),
@@ -3993,7 +3906,7 @@ public sealed interface Isotope extends Nuclide {
         /** Radium 232 */Ra232(232.043475300000000),
         /** Radium 233 */Ra233(233.047582000000000),
         /** Radium 234 */Ra234(234.050342000000000),
-        /** Radium 235 */Ra235(235.054970000000000),;
+        /** Radium 235 */Ra235(235.054970000000000);
 
         private double atomicMass;
 
@@ -4006,7 +3919,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Actinium (cf. {@link Element#Ac}) isotopes. */
     public enum Ac implements Isotope {
-
         /** Actinium 206 */Ac206(206.014452000000000),
         /** Actinium 207 */Ac207(207.011966000000000),
         /** Actinium 208 */Ac208(208.011550000000000),
@@ -4038,7 +3950,7 @@ public sealed interface Isotope extends Nuclide {
         /** Actinium 234 */Ac234(234.048139000000000),
         /** Actinium 235 */Ac235(235.050840000000000),
         /** Actinium 236 */Ac236(236.054988000000000),
-        /** Actinium 237 */Ac237(237.058270000000000),;
+        /** Actinium 237 */Ac237(237.058270000000000);
 
         private double atomicMass;
 
@@ -4051,7 +3963,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Thorium (cf. {@link Element#Th}) isotopes. */
     public enum Th implements Isotope {
-
         /** Thorium 208 */Th208(208.017900000000000),
         /** Thorium 209 */Th209(209.017753000000000),
         /** Thorium 210 */Th210(210.015094000000000),
@@ -4083,7 +3994,7 @@ public sealed interface Isotope extends Nuclide {
         /** Thorium 236 */Th236(236.049657000000000),
         /** Thorium 237 */Th237(237.053629000000000),
         /** Thorium 238 */Th238(238.056500000000000),
-        /** Thorium 239 */Th239(239.060770000000000),;
+        /** Thorium 239 */Th239(239.060770000000000);
 
         private double atomicMass;
 
@@ -4096,7 +4007,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Protactinium (cf. {@link Element#Pa}) isotopes. */
     public enum Pa implements Isotope {
-
         /** Protactinium 212 */Pa212(212.023203000000000),
         /** Protactinium 213 */Pa213(213.021109000000000),
         /** Protactinium 214 */Pa214(214.020918000000000),
@@ -4126,7 +4036,7 @@ public sealed interface Isotope extends Nuclide {
         /** Protactinium 238 */Pa238(238.054637000000000),
         /** Protactinium 239 */Pa239(239.057260000000000),
         /** Protactinium 240 */Pa240(240.060980000000000),
-        /** Protactinium 241 */Pa241(241.064080000000000),;
+        /** Protactinium 241 */Pa241(241.064080000000000);
 
         private double atomicMass;
 
@@ -4139,7 +4049,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Uranium (cf. {@link Element#U}) isotopes. */
     public enum U implements Isotope {
-
         /** Uranium 217 */ U217(217.024660000000000),
         /** Uranium 218 */ U218(218.023523000000000),
         /** Uranium 219 */ U219(219.024999000000000),
@@ -4166,7 +4075,7 @@ public sealed interface Isotope extends Nuclide {
         /** Uranium 240 */ U240(240.056593400000000),
         /** Uranium 241 */ U241(241.060330000000000),
         /** Uranium 242 */ U242(242.062930000000000),
-        /** Uranium 243 */ U243(243.066990000000000),;
+        /** Uranium 243 */ U243(243.066990000000000);
 
         private double atomicMass;
 
@@ -4179,7 +4088,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Neptunium (cf. {@link Element#Np}) isotopes. */
     public enum Np implements Isotope {
-
         /** Neptunium 219 */Np219(219.031430000000000),
         /** Neptunium 220 */Np220(220.032540000000000),
         /** Neptunium 221 */Np221(221.032040000000000),
@@ -4206,7 +4114,7 @@ public sealed interface Isotope extends Nuclide {
         /** Neptunium 242 */Np242(242.061640000000000),
         /** Neptunium 243 */Np243(243.064280000000000),
         /** Neptunium 244 */Np244(244.067850000000000),
-        /** Neptunium 245 */Np245(245.070800000000000),;
+        /** Neptunium 245 */Np245(245.070800000000000);
 
         private double atomicMass;
 
@@ -4219,7 +4127,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Plutonium (cf. {@link Element#Pu}) isotopes. */
     public enum Pu implements Isotope {
-
         /** Plutonium 228 */Pu228(228.038732000000000),
         /** Plutonium 229 */Pu229(229.040144000000000),
         /** Plutonium 230 */Pu230(230.039650000000000),
@@ -4239,7 +4146,7 @@ public sealed interface Isotope extends Nuclide {
         /** Plutonium 244 */Pu244(244.064205300000000),
         /** Plutonium 245 */Pu245(245.067826000000000),
         /** Plutonium 246 */Pu246(246.070205000000000),
-        /** Plutonium 247 */Pu247(247.074190000000000),;
+        /** Plutonium 247 */Pu247(247.074190000000000);
 
         private double atomicMass;
 
@@ -4252,7 +4159,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Americium (cf. {@link Element#Am}) isotopes. */
     public enum Am implements Isotope {
-
         /** Americium 230 */Am230(230.046090000000000),
         /** Americium 231 */Am231(231.045560000000000),
         /** Americium 232 */Am232(232.046450000000000),
@@ -4272,7 +4178,7 @@ public sealed interface Isotope extends Nuclide {
         /** Americium 246 */Am246(246.069775000000000),
         /** Americium 247 */Am247(247.072090000000000),
         /** Americium 248 */Am248(248.075750000000000),
-        /** Americium 249 */Am249(249.078480000000000),;
+        /** Americium 249 */Am249(249.078480000000000);
 
         private double atomicMass;
 
@@ -4285,7 +4191,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Curium (cf. {@link Element#Cm}) isotopes. */
     public enum Cm implements Isotope {
-
         /** Curium 232 */Cm232(232.049820000000000),
         /** Curium 233 */Cm233(233.050770000000000),
         /** Curium 234 */Cm234(234.050160000000000),
@@ -4306,7 +4211,7 @@ public sealed interface Isotope extends Nuclide {
         /** Curium 249 */Cm249(249.075954800000000),
         /** Curium 250 */Cm250(250.078358000000000),
         /** Curium 251 */Cm251(251.082286000000000),
-        /** Curium 252 */Cm252(252.084870000000000),;
+        /** Curium 252 */Cm252(252.084870000000000);
 
         private double atomicMass;
 
@@ -4319,7 +4224,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Berkelium (cf. {@link Element#Bk}) isotopes. */
     public enum Bk implements Isotope {
-
         /** Berkelium 234 */Bk234(234.057270000000000),
         /** Berkelium 235 */Bk235(235.056580000000000),
         /** Berkelium 236 */Bk236(236.057480000000000),
@@ -4340,7 +4244,7 @@ public sealed interface Isotope extends Nuclide {
         /** Berkelium 251 */Bk251(251.080762000000000),
         /** Berkelium 252 */Bk252(252.084310000000000),
         /** Berkelium 253 */Bk253(253.086880000000000),
-        /** Berkelium 254 */Bk254(254.090600000000000),;
+        /** Berkelium 254 */Bk254(254.090600000000000);
 
         private double atomicMass;
 
@@ -4353,7 +4257,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Californium (cf. {@link Element#Cf}) isotopes. */
     public enum Cf implements Isotope {
-
         /** Californium 237 */Cf237(237.062198000000000),
         /** Californium 238 */Cf238(238.061490000000000),
         /** Californium 239 */Cf239(239.062530000000000),
@@ -4373,7 +4276,7 @@ public sealed interface Isotope extends Nuclide {
         /** Californium 253 */Cf253(253.085134500000000),
         /** Californium 254 */Cf254(254.087324000000000),
         /** Californium 255 */Cf255(255.091050000000000),
-        /** Californium 256 */Cf256(256.093440000000000),;
+        /** Californium 256 */Cf256(256.093440000000000);
 
         private double atomicMass;
 
@@ -4386,7 +4289,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Einsteinium (cf. {@link Element#Es}) isotopes. */
     public enum Es implements Isotope {
-
         /** Einsteinium 239 */Es239(239.068230000000000),
         /** Einsteinium 240 */Es240(240.068920000000000),
         /** Einsteinium 241 */Es241(241.068560000000000),
@@ -4406,7 +4308,7 @@ public sealed interface Isotope extends Nuclide {
         /** Einsteinium 255 */Es255(255.090275000000000),
         /** Einsteinium 256 */Es256(256.093600000000000),
         /** Einsteinium 257 */Es257(257.095980000000000),
-        /** Einsteinium 258 */Es258(258.099520000000000),;
+        /** Einsteinium 258 */Es258(258.099520000000000);
 
         private double atomicMass;
 
@@ -4419,7 +4321,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Fermium (cf. {@link Element#Fm}) isotopes. */
     public enum Fm implements Isotope {
-
         /** Fermium 241 */Fm241(241.074210000000000),
         /** Fermium 242 */Fm242(242.073430000000000),
         /** Fermium 243 */Fm243(243.074460000000000),
@@ -4439,7 +4340,7 @@ public sealed interface Isotope extends Nuclide {
         /** Fermium 257 */Fm257(257.095106100000000),
         /** Fermium 258 */Fm258(258.097080000000000),
         /** Fermium 259 */Fm259(259.100600000000000),
-        /** Fermium 260 */Fm260(260.102810000000000),;
+        /** Fermium 260 */Fm260(260.102810000000000);
 
         private double atomicMass;
 
@@ -4452,7 +4353,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Mendelevium (cf. {@link Element#Md}) isotopes. */
     public enum Md implements Isotope {
-
         /** Mendelevium 245 */Md245(245.080810000000000),
         /** Mendelevium 246 */Md246(246.081710000000000),
         /** Mendelevium 247 */Md247(247.081520000000000),
@@ -4470,7 +4370,7 @@ public sealed interface Isotope extends Nuclide {
         /** Mendelevium 259 */Md259(259.100510000000000),
         /** Mendelevium 260 */Md260(260.103650000000000),
         /** Mendelevium 261 */Md261(261.105830000000000),
-        /** Mendelevium 262 */Md262(262.109100000000000),;
+        /** Mendelevium 262 */Md262(262.109100000000000);
 
         private double atomicMass;
 
@@ -4483,7 +4383,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Nobelium (cf. {@link Element#No}) isotopes. */
     public enum No implements Isotope {
-
         /** Nobelium 248 */No248(248.086550000000000),
         /** Nobelium 249 */No249(249.087800000000000),
         /** Nobelium 250 */No250(250.087560000000000),
@@ -4500,7 +4399,7 @@ public sealed interface Isotope extends Nuclide {
         /** Nobelium 261 */No261(261.105700000000000),
         /** Nobelium 262 */No262(262.107460000000000),
         /** Nobelium 263 */No263(263.110710000000000),
-        /** Nobelium 264 */No264(264.112730000000000),;
+        /** Nobelium 264 */No264(264.112730000000000);
 
         private double atomicMass;
 
@@ -4513,7 +4412,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Lawrencium (cf. {@link Element#Lr}) isotopes. */
     public enum Lr implements Isotope {
-
         /** Lawrencium 251 */Lr251(251.094180000000000),
         /** Lawrencium 252 */Lr252(252.095260000000000),
         /** Lawrencium 253 */Lr253(253.095090000000000),
@@ -4529,7 +4427,7 @@ public sealed interface Isotope extends Nuclide {
         /** Lawrencium 263 */Lr263(263.111360000000000),
         /** Lawrencium 264 */Lr264(264.114200000000000),
         /** Lawrencium 265 */Lr265(265.116190000000000),
-        /** Lawrencium 266 */Lr266(266.119830000000000),;
+        /** Lawrencium 266 */Lr266(266.119830000000000);
 
         private double atomicMass;
 
@@ -4542,7 +4440,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Rutherfordium (cf. {@link Element#Rf}) isotopes. */
     public enum Rf implements Isotope {
-
         /** Rutherfordium 253 */Rf253(253.100440000000000),
         /** Rutherfordium 254 */Rf254(254.100050000000000),
         /** Rutherfordium 255 */Rf255(255.101270000000000),
@@ -4558,7 +4455,7 @@ public sealed interface Isotope extends Nuclide {
         /** Rutherfordium 265 */Rf265(265.116680000000000),
         /** Rutherfordium 266 */Rf266(266.118170000000000),
         /** Rutherfordium 267 */Rf267(267.121790000000000),
-        /** Rutherfordium 268 */Rf268(268.123970000000000),;
+        /** Rutherfordium 268 */Rf268(268.123970000000000);
 
         private double atomicMass;
 
@@ -4571,7 +4468,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Dubnium (cf. {@link Element#Db}) isotopes. */
     public enum Db implements Isotope {
-
         /** Dubnium 255 */Db255(255.107070000000000),
         /** Dubnium 256 */Db256(256.107890000000000),
         /** Dubnium 257 */Db257(257.107580000000000),
@@ -4587,7 +4483,7 @@ public sealed interface Isotope extends Nuclide {
         /** Dubnium 267 */Db267(267.122470000000000),
         /** Dubnium 268 */Db268(268.125670000000000),
         /** Dubnium 269 */Db269(269.127910000000000),
-        /** Dubnium 270 */Db270(270.131360000000000),;
+        /** Dubnium 270 */Db270(270.131360000000000);
 
         private double atomicMass;
 
@@ -4600,7 +4496,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Seaborgium (cf. {@link Element#Sg}) isotopes. */
     public enum Sg implements Isotope {
-
         /** Seaborgium 258 */Sg258(258.112980000000000),
         /** Seaborgium 259 */Sg259(259.114400000000000),
         /** Seaborgium 260 */Sg260(260.114384000000000),
@@ -4616,7 +4511,7 @@ public sealed interface Isotope extends Nuclide {
         /** Seaborgium 270 */Sg270(270.130430000000000),
         /** Seaborgium 271 */Sg271(271.133930000000000),
         /** Seaborgium 272 */Sg272(272.135890000000000),
-        /** Seaborgium 273 */Sg273(273.139580000000000),;
+        /** Seaborgium 273 */Sg273(273.139580000000000);
 
         private double atomicMass;
 
@@ -4629,7 +4524,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Bohrium (cf. {@link Element#Bh}) isotopes. */
     public enum Bh implements Isotope {
-
         /** Bohrium 260 */Bh260(260.121660000000000),
         /** Bohrium 261 */Bh261(261.121450000000000),
         /** Bohrium 262 */Bh262(262.122970000000000),
@@ -4645,7 +4539,7 @@ public sealed interface Isotope extends Nuclide {
         /** Bohrium 272 */Bh272(272.138260000000000),
         /** Bohrium 273 */Bh273(273.140240000000000),
         /** Bohrium 274 */Bh274(274.143550000000000),
-        /** Bohrium 275 */Bh275(275.145670000000000),;
+        /** Bohrium 275 */Bh275(275.145670000000000);
 
         private double atomicMass;
 
@@ -4658,7 +4552,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Hassium (cf. {@link Element#Hs}) isotopes. */
     public enum Hs implements Isotope {
-
         /** Hassium 263 */Hs263(263.128520000000000),
         /** Hassium 264 */Hs264(264.128357000000000),
         /** Hassium 265 */Hs265(265.129793000000000),
@@ -4673,7 +4566,7 @@ public sealed interface Isotope extends Nuclide {
         /** Hassium 274 */Hs274(274.143300000000000),
         /** Hassium 275 */Hs275(275.146670000000000),
         /** Hassium 276 */Hs276(276.148460000000000),
-        /** Hassium 277 */Hs277(277.151900000000000),;
+        /** Hassium 277 */Hs277(277.151900000000000);
 
         private double atomicMass;
 
@@ -4686,7 +4579,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Meitnerium (cf. {@link Element#Mt}) isotopes. */
     public enum Mt implements Isotope {
-
         /** Meitnerium 265 */Mt265(265.136000000000000),
         /** Meitnerium 266 */Mt266(266.137370000000000),
         /** Meitnerium 267 */Mt267(267.137190000000000),
@@ -4701,7 +4593,7 @@ public sealed interface Isotope extends Nuclide {
         /** Meitnerium 276 */Mt276(276.151590000000000),
         /** Meitnerium 277 */Mt277(277.153270000000000),
         /** Meitnerium 278 */Mt278(278.156310000000000),
-        /** Meitnerium 279 */Mt279(279.158080000000000),;
+        /** Meitnerium 279 */Mt279(279.158080000000000);
 
         private double atomicMass;
 
@@ -4714,7 +4606,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Darmstadtium (cf. {@link Element#Ds}) isotopes. */
     public enum Ds implements Isotope {
-
         /** Darmstadtium 267 */Ds267(267.143770000000000),
         /** Darmstadtium 268 */Ds268(268.143480000000000),
         /** Darmstadtium 269 */Ds269(269.144752000000000),
@@ -4729,7 +4620,7 @@ public sealed interface Isotope extends Nuclide {
         /** Darmstadtium 278 */Ds278(278.157040000000000),
         /** Darmstadtium 279 */Ds279(279.160100000000000),
         /** Darmstadtium 280 */Ds280(280.161310000000000),
-        /** Darmstadtium 281 */Ds281(281.164510000000000),;
+        /** Darmstadtium 281 */Ds281(281.164510000000000);
 
         private double atomicMass;
 
@@ -4742,7 +4633,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Roentgenium (cf. {@link Element#Rg}) isotopes. */
     public enum Rg implements Isotope {
-
         /** Roentgenium 272 */Rg272(272.153270000000000),
         /** Roentgenium 273 */Rg273(273.153130000000000),
         /** Roentgenium 274 */Rg274(274.155250000000000),
@@ -4754,7 +4644,7 @@ public sealed interface Isotope extends Nuclide {
         /** Roentgenium 280 */Rg280(280.165140000000000),
         /** Roentgenium 281 */Rg281(281.166360000000000),
         /** Roentgenium 282 */Rg282(282.169120000000000),
-        /** Roentgenium 283 */Rg283(283.170540000000000),;
+        /** Roentgenium 283 */Rg283(283.170540000000000);
 
         private double atomicMass;
 
@@ -4767,7 +4657,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Copernicium (cf. {@link Element#Cn}) isotopes. */
     public enum Cn implements Isotope {
-
         /** Copernicium 276 */Cn276(276.161410000000000),
         /** Copernicium 277 */Cn277(277.163640000000000),
         /** Copernicium 278 */Cn278(278.164160000000000),
@@ -4777,7 +4666,7 @@ public sealed interface Isotope extends Nuclide {
         /** Copernicium 282 */Cn282(282.170500000000000),
         /** Copernicium 283 */Cn283(283.173270000000000),
         /** Copernicium 284 */Cn284(284.174160000000000),
-        /** Copernicium 285 */Cn285(285.177120000000000),;
+        /** Copernicium 285 */Cn285(285.177120000000000);
 
         private double atomicMass;
 
@@ -4790,7 +4679,6 @@ public sealed interface Isotope extends Nuclide {
 
     /** Nihonium (cf. {@link Element#Nh}) isotopes. */
     public enum Nh implements Isotope {
-
         /** Nihonium 278 */Nh278(278.170580000000000),
         /** Nihonium 279 */Nh279(279.170950000000000),
         /** Nihonium 280 */Nh280(280.172930000000000),
@@ -4800,7 +4688,7 @@ public sealed interface Isotope extends Nuclide {
         /** Nihonium 284 */Nh284(284.178730000000000),
         /** Nihonium 285 */Nh285(285.179730000000000),
         /** Nihonium 286 */Nh286(286.182210000000000),
-        /** Nihonium 287 */Nh287(287.183390000000000),;
+        /** Nihonium 287 */Nh287(287.183390000000000);
 
         private double atomicMass;
 
@@ -4813,12 +4701,11 @@ public sealed interface Isotope extends Nuclide {
 
     /** Flerovium (cf. {@link Element#Fl}) isotopes. */
     public enum Fl implements Isotope {
-
         /** Flerovium 285 */Fl285(285.183640000000000),
         /** Flerovium 286 */Fl286(286.184230000000000),
         /** Flerovium 287 */Fl287(287.186780000000000),
         /** Flerovium 288 */Fl288(288.187570000000000),
-        /** Flerovium 289 */Fl289(289.190420000000000),;
+        /** Flerovium 289 */Fl289(289.190420000000000);
 
         private double atomicMass;
 
@@ -4831,12 +4718,11 @@ public sealed interface Isotope extends Nuclide {
 
     /** Moscovium (cf. {@link Element#Mc}) isotopes. */
     public enum Mc implements Isotope {
-
         /** Moscovium 287 */Mc287(287.190700000000000),
         /** Moscovium 288 */Mc288(288.192740000000000),
         /** Moscovium 289 */Mc289(289.193630000000000),
         /** Moscovium 290 */Mc290(290.195980000000000),
-        /** Moscovium 291 */Mc291(291.197070000000000),;
+        /** Moscovium 291 */Mc291(291.197070000000000);
 
         private double atomicMass;
 
@@ -4849,12 +4735,11 @@ public sealed interface Isotope extends Nuclide {
 
     /** Livermorium (cf. {@link Element#Lv}) isotopes. */
     public enum Lv implements Isotope {
-
         /** Livermorium 289 */Lv289(289.198160000000000),
         /** Livermorium 290 */Lv290(290.198640000000000),
         /** Livermorium 291 */Lv291(291.201080000000000),
         /** Livermorium 292 */Lv292(292.201740000000000),
-        /** Livermorium 293 */Lv293(293.204490000000000),;
+        /** Livermorium 293 */Lv293(293.204490000000000);
 
         private double atomicMass;
 
@@ -4867,11 +4752,10 @@ public sealed interface Isotope extends Nuclide {
 
     /** Tennessine (cf. {@link Element#Ts}) isotopes. */
     public enum Ts implements Isotope {
-
         /** Tennessine 291 */Ts291(291.205530000000000),
         /** Tennessine 292 */Ts292(292.207460000000000),
         /** Tennessine 293 */Ts293(293.208240000000000),
-        /** Tennessine 294 */Ts294(294.210460000000000),;
+        /** Tennessine 294 */Ts294(294.210460000000000);
 
         private double atomicMass;
 
@@ -4884,10 +4768,9 @@ public sealed interface Isotope extends Nuclide {
 
     /** Oganesson (cf. {@link Element#Og}) isotopes. */
     public enum Og implements Isotope {
-
         /** Oganesson 293 */Og293(293.213560000000000),
         /** Oganesson 294 */Og294(294.213920000000000),
-        /** Oganesson 295 */Og295(295.216240000000000),;
+        /** Oganesson 295 */Og295(295.216240000000000);
 
         private double atomicMass;
 
